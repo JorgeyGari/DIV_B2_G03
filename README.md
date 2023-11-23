@@ -10,14 +10,15 @@ This is the visualization part and is based on [darosete/DIV_B1/G03](https://git
 ## Description
 
 > **Objective**: Design and develop a set of interactive visualizations about a domain of interest.  
-> **Procedure**: Based on the results obtained in Block 1, apply the three phases of the Nested Model.
+> **Procedure**: Based on the results obtained in Block 1, apply the three phases of the Nested Model.  
 >
-> 1. Domain problem characterization
->   a. Identify the domain of interest and the stakeholders interested in the domain.
->   b. Point out a set of questions about the domain that could be of interest for the stakeholders.
->   c. Interview the stakeholders to identify the objectives of the project and the tasks to achieve them.
-> 2. Data / operation abstraction design
->   a. Answer to the pointed out questions defining the graphical elements and the tasks to interact with them.
-> 3. Encoding / interaction technique design
->   a. Prototyping and designing a set of interactive visualizations
-
+> 1. Domain problem characterization  
+>   a. Identify the domain of interest and the stakeholders interested in the domain.  
+>   b. Point out a set of questions about the domain that could be of interest for the stakeholders.  
+>   c. Interview the stakeholders to identify the objectives of the project and the tasks to achieve them.  
+>
+> 2. Data / operation abstraction design  
+>   a. Answer to the pointed out questions defining the graphical elements and the tasks to interact with them.  
+>
+> 3. Encoding / interaction technique design  
+>   a. Prototyping and designing a set of interactive visualizations  
