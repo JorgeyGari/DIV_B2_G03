@@ -1,39 +1,32 @@
-from dash import Dash, html, dcc
-import plotly.express as px
+from dash import Dash, html
 import pandas as pd
-
-# CREAR TABLA
-def generate_table(dataframe, max_rows=10):
-    return html.Table([
-        html.Thead(
-            html.Tr([html.Th(col) for col in dataframe.columns])
-        ),
-        html.Tbody([
-            html.Tr([
-                html.Td(dataframe.iloc[i][col]) for col in dataframe.columns
-            ]) for i in range(min(len(dataframe), max_rows))
-        ])
-    ])
-
-# ESTILO
-colors = {
-    'background': '#19323C',
-    'text': '#A93F55'
-}
 
 df = pd.read_json('data.json')
 
 app = Dash(__name__)
 
-app.layout = html.Div(style={'backgroundColor': colors['background']}, children = [
-    html.H1(
-        children='EVENTFUL',
-        style={
-            'textAlign': 'center',
-            'color': colors['text']
-        }
+app.layout = html.Div([
+    html.H1
+    (
+        'EVENTFUL'
     ),
-    generate_table(df)
+    
+    html.Div 
+    (
+        [html.A("Artists", href="#artists")]
+    ),
+
+    html.Div
+    (
+        [html.A("Concerts", href="#concerts")]
+    ),
+    
+    html.Div 
+    (
+        [html.H2("Artists", id="artists")] +
+        [html.Br()]*50 +
+        [html.H2("Concerts", id="concerts")]
+    )
 ])
 
 if __name__ == '__main__':
