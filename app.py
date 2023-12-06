@@ -13,21 +13,30 @@ from dash import Dash, html, dcc
 import pandas as pd
 import plotly.graph_objects as go
 
+latitudes = []
+longitudes = []
+artists = []
 
 df = pd.read_json('data.json')
+for artist in df.loc["Concerts"].index:
+    for concert in df.loc["Concerts"][artist]:
+        latitudes.append(concert["Latitude"])
+        longitudes.append(concert["Longitude"])
+        artists.append(artist)
+
 
 app = Dash(__name__)
 
 mapbox_access_token = "pk.eyJ1IjoicGFibG9zYXZpbmEiLCJhIjoiY2xwbXVreXo4MGN5bTJscXk3YjJwY291ciJ9.Kyrlg9CR1Rdo7wAzD3IAVQ"
 
 map = go.Figure(go.Scattermapbox(
-        lat=["40.3324408", "51.5287398"],
-        lon=["-3.7676849", "-0.2664044"],
+        lat = latitudes,
+        lon = longitudes,
         mode='markers',
         marker=go.scattermapbox.Marker(
             size=9
         ),
-        text=["Universidad", "Londres"],
+        text=artists,
     ))
 
 map.update_layout(
