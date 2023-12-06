@@ -14,7 +14,9 @@
                 "City": "Madrid",
                 "Country": "Spain",
                 "Main Genre": "Rock",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.45303",
+                "Longitude": "-3.68833"
             },
             {
                 "Concert Name": "Taylor Swift | The Eras Tour",
@@ -29,7 +31,9 @@
                 "City": "Madrid",
                 "Country": "Spain",
                 "Main Genre": "Rock",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.45303",
+                "Longitude": "-3.68833"
             },
             {
                 "Concert Name": "Taylor Swift | The Eras Tour",
@@ -44,7 +48,9 @@
                 "City": "Edinburgh",
                 "Country": "Great Britain",
                 "Main Genre": "Pop",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "55.94078064",
+                "Longitude": "-3.24194169"
             },
             {
                 "Concert Name": "Taylor Swift | The Eras Tour",
@@ -59,7 +65,9 @@
                 "City": "Edinburgh",
                 "Country": "Great Britain",
                 "Main Genre": "Pop",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "55.94078064",
+                "Longitude": "-3.24194169"
             },
             {
                 "Concert Name": "Taylor Swift | The Eras Tour",
@@ -74,7 +82,9 @@
                 "City": "Edinburgh",
                 "Country": "Great Britain",
                 "Main Genre": "Pop",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "55.94078064",
+                "Longitude": "-3.24194169"
             },
             {
                 "Concert Name": "Taylor Swift | The Eras Tour",
@@ -89,7 +99,9 @@
                 "City": "Liverpool",
                 "Country": "Great Britain",
                 "Main Genre": "Pop",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "53.43123902",
+                "Longitude": "-2.96176929"
             },
             {
                 "Concert Name": "Taylor Swift | The Eras Tour",
@@ -104,7 +116,9 @@
                 "City": "Liverpool",
                 "Country": "Great Britain",
                 "Main Genre": "Pop",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "53.43123902",
+                "Longitude": "-2.96176929"
             },
             {
                 "Concert Name": "Taylor Swift | The Eras Tour",
@@ -119,7 +133,9 @@
                 "City": "Liverpool",
                 "Country": "Great Britain",
                 "Main Genre": "Pop",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "53.43123902",
+                "Longitude": "-2.96176929"
             },
             {
                 "Concert Name": "Taylor Swift | The Eras Tour",
@@ -134,7 +150,9 @@
                 "City": "Cardiff",
                 "Country": "Great Britain",
                 "Main Genre": "Pop",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "51.477945",
+                "Longitude": "-3.18305"
             }
         ],
         "Spotify tracks": {
@@ -869,14 +887,16 @@
                 "Time": "19:30:00",
                 "Timezone": "America/Chicago",
                 "Ticketmaster Cheapest Price": 75.5,
-                "Seatgeek Cheapest Price": 108,
+                "Seatgeek Cheapest Price": 110,
                 "Currency": "USD",
                 "Venue": "United Center",
                 "City": "Chicago",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "41.88124412",
+                "Longitude": "-87.67427375"
             },
             {
                 "Concert Name": "Doja Cat - The Scarlet Tour",
@@ -885,14 +905,16 @@
                 "Time": "19:30:00",
                 "Timezone": "America/New_York",
                 "Ticketmaster Cheapest Price": 49.5,
-                "Seatgeek Cheapest Price": 58,
+                "Seatgeek Cheapest Price": 57,
                 "Currency": "USD",
                 "Venue": "Little Caesars Arena",
                 "City": "Detroit",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "42.341089",
+                "Longitude": "-83.055434"
             },
             {
                 "Concert Name": "Doja Cat - The Scarlet Tour",
@@ -901,13 +923,15 @@
                 "Time": "19:30:00",
                 "Timezone": "America/Chicago",
                 "Ticketmaster Cheapest Price": 35.5,
-                "Seatgeek Cheapest Price": 72,
+                "Seatgeek Cheapest Price": 71,
                 "Currency": "USD",
                 "Venue": "Target Center",
                 "City": "Minneapolis",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "44.979657",
+                "Longitude": "-93.274889"
             },
             {
                 "Concert Name": "Doja Cat - The Scarlet Tour",
@@ -916,13 +940,15 @@
                 "Time": "19:30:00",
                 "Timezone": "America/Chicago",
                 "Ticketmaster Cheapest Price": 35.5,
-                "Seatgeek Cheapest Price": 60,
+                "Seatgeek Cheapest Price": 59,
                 "Currency": "USD",
                 "Venue": "CHI Health Center Omaha",
                 "City": "Omaha",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "41.2637516",
+                "Longitude": "-95.9284094"
             },
             {
                 "Concert Name": "Doja Cat - The Scarlet Tour",
@@ -931,14 +957,16 @@
                 "Time": "19:30:00",
                 "Timezone": "America/New_York",
                 "Ticketmaster Cheapest Price": 59.5,
-                "Seatgeek Cheapest Price": 111,
+                "Seatgeek Cheapest Price": 115,
                 "Currency": "CAD",
                 "Venue": "Scotiabank Arena",
                 "City": "Toronto",
                 "Country": "Canada",
                 "Main Genre": "Hip-Hop/Rap",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "43.6439254",
+                "Longitude": "-79.3783234"
             }
         ],
         "Spotify tracks": {
@@ -1080,7 +1108,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Rock",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.7497062",
+                "Longitude": "-73.9916006"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1096,7 +1126,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "33.825315",
+                "Longitude": "-116.542747"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1112,7 +1144,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "33.445899",
+                "Longitude": "-112.071313"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1128,7 +1162,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "30.280735",
+                "Longitude": "-97.730837"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1144,7 +1180,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "32.79067196",
+                "Longitude": "-96.81081803"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1160,7 +1198,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "29.9489653",
+                "Longitude": "-90.079688"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1176,7 +1216,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "28.539293",
+                "Longitude": "-81.383957"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1192,7 +1234,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "25.781232",
+                "Longitude": "-80.187805"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1207,7 +1251,9 @@
                 "City": "Charlotte",
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "35.225222",
+                "Longitude": "-80.839921"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1216,14 +1262,16 @@
                 "Time": "19:30:00",
                 "Timezone": "America/Chicago",
                 "Ticketmaster Cheapest Price": 20.0,
-                "Seatgeek Cheapest Price": 323,
+                "Seatgeek Cheapest Price": 380,
                 "Currency": "USD",
                 "Venue": "Bridgestone Arena",
                 "City": "Nashville",
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "36.159949",
+                "Longitude": "-86.77857"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1239,7 +1287,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "38.626432",
+                "Longitude": "-90.202617"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1254,7 +1304,9 @@
                 "City": "Omaha",
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "41.2637516",
+                "Longitude": "-95.9284094"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1270,7 +1322,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "44.94489438",
+                "Longitude": "-93.10121819"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1286,7 +1340,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "43.04228",
+                "Longitude": "-87.916896"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1302,7 +1358,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "41.88124412",
+                "Longitude": "-87.67427375"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1318,7 +1376,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "41.88124412",
+                "Longitude": "-87.67427375"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1333,7 +1393,9 @@
                 "City": "Columbus",
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "39.96939661",
+                "Longitude": "-83.00636203"
             },
             {
                 "Concert Name": "Olivia Rodrigo - GUTS world tour",
@@ -1342,14 +1404,16 @@
                 "Time": "19:30:00",
                 "Timezone": "America/New_York",
                 "Ticketmaster Cheapest Price": 49.5,
-                "Seatgeek Cheapest Price": 454,
+                "Seatgeek Cheapest Price": 485,
                 "Currency": "USD",
                 "Venue": "Little Caesars Arena",
                 "City": "Detroit",
                 "Country": "United States Of America",
                 "Main Genre": "Pop",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "42.341089",
+                "Longitude": "-83.055434"
             }
         ],
         "Spotify tracks": {
@@ -1632,7 +1696,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "39.904551",
+                "Longitude": "-75.1736273"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1648,7 +1714,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "41.88124412",
+                "Longitude": "-87.67427375"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1663,7 +1731,9 @@
                 "City": "New York",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.7497062",
+                "Longitude": "-73.9916006"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1678,7 +1748,9 @@
                 "City": "Detroit",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "42.341089",
+                "Longitude": "-83.055434"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1694,7 +1766,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "42.365841",
+                "Longitude": "-71.060724"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1709,7 +1783,9 @@
                 "City": "Newark",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.73340555",
+                "Longitude": "-74.17121214"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1724,7 +1800,9 @@
                 "City": "Brooklyn",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.68285",
+                "Longitude": "-73.97519"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1732,7 +1810,7 @@
                 "Date": "2023-12-08",
                 "Time": "20:00:00",
                 "Timezone": "America/New_York",
-                "Ticketmaster Cheapest Price": 55.5,
+                "Ticketmaster Cheapest Price": 35.5,
                 "Seatgeek Cheapest Price": "Inexistent",
                 "Currency": "USD",
                 "Venue": "PPG Paints Arena",
@@ -1740,7 +1818,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.4388401",
+                "Longitude": "-79.9908551"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1755,7 +1835,9 @@
                 "City": "Baltimore",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "39.288494",
+                "Longitude": "-76.6187"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1771,7 +1853,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "42.365841",
+                "Longitude": "-71.060724"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1786,7 +1870,9 @@
                 "City": "Brooklyn",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.68285",
+                "Longitude": "-73.97519"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1802,7 +1888,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "25.781232",
+                "Longitude": "-80.187805"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1818,7 +1906,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "44.94489438",
+                "Longitude": "-93.10121819"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1833,7 +1923,9 @@
                 "City": "University Park",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.8086435",
+                "Longitude": "-77.8558448"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1849,7 +1941,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "28.539293",
+                "Longitude": "-81.383957"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1865,7 +1959,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "43.04228",
+                "Longitude": "-87.916896"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1880,7 +1976,9 @@
                 "City": "Columbus",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "40.0080079",
+                "Longitude": "-83.0249081"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1896,7 +1994,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "41.88124412",
+                "Longitude": "-87.67427375"
             },
             {
                 "Concert Name": "Travis Scott Utopia Tour Presents Circus Maximus",
@@ -1911,7 +2011,9 @@
                 "City": "Louisville",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "38.25713",
+                "Longitude": "-85.753958"
             },
             {
                 "Concert Name": "Travis Scott: Utopia Concert Afterparty",
@@ -1926,7 +2028,9 @@
                 "City": "Philadelphia",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "39.957705",
+                "Longitude": "-75.159035"
             }
         ],
         "Spotify tracks": {
@@ -2002,7 +2106,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Country",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "40.004003",
+                "Longitude": "-83.019363"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2017,7 +2123,9 @@
                 "City": "Denver",
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "39.743853",
+                "Longitude": "-105.020127"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2033,7 +2141,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "42.090918",
+                "Longitude": "-71.264321"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2049,7 +2159,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "27.975976",
+                "Longitude": "-82.503474"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2064,7 +2176,9 @@
                 "City": "Atlanta",
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "33.755389",
+                "Longitude": "-84.400823"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2079,7 +2193,9 @@
                 "City": "Philadelphia",
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "39.900706",
+                "Longitude": "-75.167406"
             },
             {
                 "Concert Name": "Buckeye Country Superfest starring Zach Bryan",
@@ -2095,7 +2211,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Country",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "40.004003",
+                "Longitude": "-83.019363"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2110,7 +2228,9 @@
                 "City": "Philadelphia",
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "39.900706",
+                "Longitude": "-75.167406"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2126,7 +2246,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "42.339924",
+                "Longitude": "-83.045543"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2142,7 +2264,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.4388401",
+                "Longitude": "-79.9908551"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2157,7 +2281,9 @@
                 "City": "Denver",
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "39.743853",
+                "Longitude": "-105.020127"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2173,7 +2299,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "42.090918",
+                "Longitude": "-71.264321"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2188,7 +2316,9 @@
                 "City": "Greensboro",
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "36.058332",
+                "Longitude": "-79.825534"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2203,7 +2333,9 @@
                 "City": "Knoxville",
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "35.9517627",
+                "Longitude": "-83.925366"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2212,14 +2344,16 @@
                 "Time": "19:00:00",
                 "Timezone": "America/New_York",
                 "Ticketmaster Cheapest Price": 99.5,
-                "Seatgeek Cheapest Price": 300,
+                "Seatgeek Cheapest Price": 298,
                 "Currency": "USD",
                 "Venue": "KeyBank Center",
                 "City": "Buffalo",
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "42.874941",
+                "Longitude": "-78.8762239"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2235,7 +2369,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "38.897412",
+                "Longitude": "-77.020029"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2250,7 +2386,9 @@
                 "City": "Atlanta",
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "33.755389",
+                "Longitude": "-84.400823"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2266,7 +2404,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "41.88124412",
+                "Longitude": "-87.67427375"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2281,7 +2421,9 @@
                 "City": "Knoxville",
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "35.9517627",
+                "Longitude": "-83.925366"
             },
             {
                 "Concert Name": "Zach Bryan",
@@ -2296,7 +2438,9 @@
                 "City": "University Park",
                 "Country": "United States Of America",
                 "Main Genre": "Folk",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.8086435",
+                "Longitude": "-77.8558448"
             }
         ],
         "Spotify tracks": {
@@ -2761,7 +2905,9 @@
                 "Country": "Great Britain",
                 "Main Genre": "Undefined",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "51.463682",
+                "Longitude": "-0.984937"
             }
         ],
         "Spotify tracks": {
@@ -2904,7 +3050,9 @@
                 "City": "Las Vegas",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "36.13674",
+                "Longitude": "-115.16126"
             },
             {
                 "Concert Name": "Post Malone",
@@ -2919,7 +3067,9 @@
                 "City": "Las Vegas",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "36.13674",
+                "Longitude": "-115.16126"
             }
         ],
         "Spotify tracks": {
@@ -3069,7 +3219,9 @@
                 "City": "Inglewood",
                 "Country": "United States Of America",
                 "Main Genre": "Rock",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "33.9583",
+                "Longitude": "-118.341868"
             },
             {
                 "Concert Name": "Justin Bieber",
@@ -3085,7 +3237,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Rock",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "43.027552",
+                "Longitude": "-87.897661"
             },
             {
                 "Concert Name": "Justin Bieber",
@@ -3100,7 +3254,9 @@
                 "City": "Uncasville",
                 "Country": "United States Of America",
                 "Main Genre": "Rock",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "41.4915974",
+                "Longitude": "-72.0914563"
             },
             {
                 "Concert Name": "Justin Bieber",
@@ -3115,7 +3271,9 @@
                 "City": "Inglewood",
                 "Country": "United States Of America",
                 "Main Genre": "Rock",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "33.9583",
+                "Longitude": "-118.341868"
             }
         ],
         "Spotify tracks": {
@@ -3668,13 +3826,15 @@
                 "Time": "21:30:00",
                 "Timezone": "America/New_York",
                 "Ticketmaster Cheapest Price": 128.0,
-                "Seatgeek Cheapest Price": 614,
+                "Seatgeek Cheapest Price": 646,
                 "Currency": "USD",
                 "Venue": "Hard Rock Live",
                 "City": "Hollywood",
                 "Country": "United States Of America",
                 "Main Genre": "Rock",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "26.0503384",
+                "Longitude": "-80.2109577"
             },
             {
                 "Concert Name": "Bruno Mars",
@@ -3683,13 +3843,15 @@
                 "Time": "20:00:00",
                 "Timezone": "America/New_York",
                 "Ticketmaster Cheapest Price": 128.0,
-                "Seatgeek Cheapest Price": 687,
+                "Seatgeek Cheapest Price": 771,
                 "Currency": "USD",
                 "Venue": "Hard Rock Live",
                 "City": "Hollywood",
                 "Country": "United States Of America",
                 "Main Genre": "Rock",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "26.0503384",
+                "Longitude": "-80.2109577"
             },
             {
                 "Concert Name": "Bruno Mars Las Vegas",
@@ -3705,7 +3867,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Rock",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "36.105126",
+                "Longitude": "-115.175233"
             },
             {
                 "Concert Name": "Bruno Mars Las Vegas",
@@ -3721,7 +3885,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Rock",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "36.105126",
+                "Longitude": "-115.175233"
             },
             {
                 "Concert Name": "Bruno Mars Las Vegas",
@@ -3737,7 +3903,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Rock",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "36.105126",
+                "Longitude": "-115.175233"
             },
             {
                 "Concert Name": "Bruno Mars Las Vegas",
@@ -3753,7 +3921,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Rock",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "36.105126",
+                "Longitude": "-115.175233"
             },
             {
                 "Concert Name": "Bruno Mars Las Vegas",
@@ -3769,7 +3939,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Rock",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "36.105126",
+                "Longitude": "-115.175233"
             }
         ],
         "Spotify tracks": {
@@ -4033,7 +4205,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Country",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.81359",
+                "Longitude": "-74.074493"
             },
             {
                 "Concert Name": "Morgan Wallen: One Night At A Time World Tour",
@@ -4049,7 +4223,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Country",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.81359",
+                "Longitude": "-74.074493"
             },
             {
                 "Concert Name": "Morgan Wallen: One Night At A Time World Tour",
@@ -4064,7 +4240,9 @@
                 "City": "Hershey",
                 "Country": "United States Of America",
                 "Main Genre": "Country",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "40.290715",
+                "Longitude": "-76.660281"
             },
             {
                 "Concert Name": "Morgan Wallen: One Night At A Time World Tour",
@@ -4079,7 +4257,9 @@
                 "City": "Philadelphia",
                 "Country": "United States Of America",
                 "Main Genre": "Country",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "39.9594667",
+                "Longitude": "-75.2249542"
             },
             {
                 "Concert Name": "Morgan Wallen: One Night At A Time World Tour",
@@ -4095,7 +4275,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Country",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "36.769107",
+                "Longitude": "-76.103685"
             },
             {
                 "Concert Name": "Morgan Wallen: One Night At A Time World Tour",
@@ -4111,7 +4293,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Country",
                 "Parking Service": "No",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "36.769107",
+                "Longitude": "-76.103685"
             },
             {
                 "Concert Name": "Morgan Wallen: One Night At A Time 2024",
@@ -4126,7 +4310,9 @@
                 "City": "Indianapolis",
                 "Country": "United States Of America",
                 "Main Genre": "Country",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "39.76007",
+                "Longitude": "-86.163821"
             },
             {
                 "Concert Name": "Morgan Wallen: One Night At A Time 2024",
@@ -4141,7 +4327,9 @@
                 "City": "Indianapolis",
                 "Country": "United States Of America",
                 "Main Genre": "Country",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "39.76007",
+                "Longitude": "-86.163821"
             },
             {
                 "Concert Name": "Morgan Wallen: One Night At A Time 2024",
@@ -4157,7 +4345,9 @@
                 "Country": "United States Of America",
                 "Main Genre": "Country",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "44.973617",
+                "Longitude": "-93.257528"
             },
             {
                 "Concert Name": "Morgan Wallen: One Night At A Time 2024",
@@ -4166,14 +4356,16 @@
                 "Time": "18:00:00",
                 "Timezone": "America/Chicago",
                 "Ticketmaster Cheapest Price": 69.75,
-                "Seatgeek Cheapest Price": 206,
+                "Seatgeek Cheapest Price": 203,
                 "Currency": "USD",
                 "Venue": "U.S. Bank Stadium",
                 "City": "Minneapolis",
                 "Country": "United States Of America",
                 "Main Genre": "Country",
                 "Parking Service": "No",
-                "Accessibility Services": "Yes"
+                "Accessibility Services": "Yes",
+                "Latitude": "44.973617",
+                "Longitude": "-93.257528"
             }
         ],
         "Spotify tracks": {
@@ -6699,13 +6891,15 @@
                 "Time": "20:00:00",
                 "Timezone": "America/New_York",
                 "Ticketmaster Cheapest Price": 39.0,
-                "Seatgeek Cheapest Price": 116,
+                "Seatgeek Cheapest Price": 114,
                 "Currency": "USD",
                 "Venue": "Capital One Arena",
                 "City": "Washington",
                 "Country": "United States Of America",
                 "Main Genre": "Hip-Hop/Rap",
-                "Accessibility Services": "No"
+                "Accessibility Services": "No",
+                "Latitude": "38.897412",
+                "Longitude": "-77.020029"
             }
         ],
         "Spotify tracks": {
