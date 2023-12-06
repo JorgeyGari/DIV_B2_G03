@@ -9,6 +9,8 @@
 # https://plotly.com/python/scatter-plots-on-maps/
 # https://dash.plotly.com/dash-core-components/geolocation
 
+# Expansión del Mapa: Añadir clusters, crear markers personalizados, asociar a un color por artista
+
 from dash import Dash, html, dcc
 import pandas as pd
 import plotly.graph_objects as go
@@ -20,8 +22,15 @@ artists = []
 df = pd.read_json('data.json')
 for artist in df.loc["Concerts"].index:
     for concert in df.loc["Concerts"][artist]:
-        latitudes.append(concert["Latitude"])
-        longitudes.append(concert["Longitude"])
+        latitude = concert["Latitude"]
+        longitude = concert["Longitude"]
+
+        while latitude in latitudes: 
+            latitude = str(float(latitude) + 0.005)
+            longitude = str(float(longitude) + 0.005)
+        
+        latitudes.append(latitude)
+        longitudes.append(longitude)
         artists.append(artist)
 
 
@@ -34,25 +43,30 @@ map = go.Figure(go.Scattermapbox(
         lon = longitudes,
         mode='markers',
         marker=go.scattermapbox.Marker(
-            size=9
+            size=10,
+            color="rgb(255,0,0)"
         ),
         text=artists,
     ))
 
 map.update_layout(
+    title="Concerts",
     autosize=True,
     hovermode='closest',
     mapbox=dict(
         accesstoken=mapbox_access_token,
         bearing=0,
         center=dict(
-            lat=40.3324408,
-            lon=-3.7676849
+            lat=39.833333,
+            lon=-98.583333
         ),
         pitch=0,
-        zoom=1
+        zoom=2,
+        # options for style --> basic, streets, outdoors, light, dark, satellite, satellite-streets
+        style = "outdoors"
     ),
 )
+
 
 app.layout = html.Div([
     html.H1
