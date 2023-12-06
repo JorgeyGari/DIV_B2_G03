@@ -11,7 +11,7 @@
 
 # Expansión del Mapa: Añadir clusters, crear markers personalizados, asociar a un color por artista
 
-from dash import Dash, html, dcc
+from dash import Dash, html, dcc, Input, Output, callback
 import pandas as pd
 import plotly.graph_objects as go
 
@@ -19,7 +19,9 @@ latitudes = []
 longitudes = []
 artists = []
 
+# He tenido que borrar manualmente a Kanye West, a SZA y a Lana del Rey. Podemos considerar volver a añadirlos
 df = pd.read_json('data.json')
+
 for artist in df.loc["Concerts"].index:
     for concert in df.loc["Concerts"][artist]:
         latitude = concert["Latitude"]
@@ -32,7 +34,6 @@ for artist in df.loc["Concerts"].index:
         latitudes.append(latitude)
         longitudes.append(longitude)
         artists.append(artist)
-
 
 app = Dash(__name__)
 
@@ -50,7 +51,7 @@ map = go.Figure(go.Scattermapbox(
     ))
 
 map.update_layout(
-    title="Concerts",
+    # title="Concerts",
     autosize=True,
     hovermode='closest',
     mapbox=dict(
@@ -67,6 +68,12 @@ map.update_layout(
     ),
 )
 
+@callback(
+    Output(component_id='my-output', component_property='children'),
+    Input(component_id='my-input', component_property='value')
+)
+def map2concert():
+    pass
 
 app.layout = html.Div([
     html.H1
@@ -79,10 +86,25 @@ app.layout = html.Div([
         [html.A("Artists", href="#artists")]
     ),
 
+    html.Div 
+    (
+        [html.A("Concerts", href="#concerts")]
+    ),
+    
+    html.Div 
+    (
+        [html.H2("Artists", id="artists")]
+    ),
+
     html.Div
     (
+        [html.Br()]*50
+    ),
+
+    html.Div
+    (
+        [html.H2("Concerts", id="concerts")] +
         [
-            html.A("Concerts", href="#concerts"),
             dcc.Graph(figure=map),
             dcc.RangeSlider
             (
@@ -108,14 +130,8 @@ app.layout = html.Div([
                 allowCross = False,
                 id="date-selector"
             )
-        ]
-    ),
-    
-    html.Div 
-    (
-        [html.H2("Artists", id="artists")] +
-        [html.Br()]*50 +
-        [html.H2("Concerts", id="concerts")]
+        ] +
+        [html.Br()]*50
     )
 ])
 
