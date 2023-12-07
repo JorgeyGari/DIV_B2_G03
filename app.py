@@ -1,6 +1,6 @@
 from dash import Dash, html
 from map import map_timeline
-from concert import concert_info
+from concert import concert_dropdown
 
 app = Dash(__name__)
 
@@ -20,8 +20,8 @@ app.layout = html.Div([
     ),
 
     map_timeline,
-    
-    concert_info
+
+    concert_dropdown
 ])
 
 if __name__ == '__main__':
