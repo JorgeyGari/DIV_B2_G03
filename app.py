@@ -76,34 +76,22 @@ def map2concert():
     pass
 
 app.layout = html.Div([
-    html.H1
+    html.H1  # Page title
     (
         'EVENTFUL'
     ),
     
-    html.Div 
-    (
-        [html.A("Artists", href="#artists")]
+    html.Div  # Navigation bar
+    ( 
+        children =
+        [
+            html.Div([html.A("Artists", href="#artists")]),
+            html.Div([html.A("Concerts", href="#concerts")])
+        ]
     ),
 
-    html.Div 
+    html.Div  # Map + timeline
     (
-        [html.A("Concerts", href="#concerts")]
-    ),
-    
-    html.Div 
-    (
-        [html.H2("Artists", id="artists")]
-    ),
-
-    html.Div
-    (
-        [html.Br()]*50
-    ),
-
-    html.Div
-    (
-        [html.H2("Concerts", id="concerts")] +
         [
             dcc.Graph(figure=map),
             dcc.RangeSlider
@@ -130,8 +118,27 @@ app.layout = html.Div([
                 allowCross = False,
                 id="date-selector"
             )
-        ] +
-        [html.Br()]*50
+        ]
+    ),
+    
+    html.Div  # Artists section
+    (
+        [html.H2("Artists", id="artists")] +
+        [html.Br()] * 50
+    ),
+
+    html.Div  # Concerts section
+    (
+        [
+            html.H2("Concerts", id="concerts"),
+            html.Div
+            (
+                [
+                    html.H3("Taylor Swift"),
+                    html.Img(src="https://s1.ticketm.net/dam/a/a67/86eb84c0-ad6a-43c6-a55f-ff5d109c9a67_CUSTOM.jpg"),
+                ]
+            ),
+         ]
     )
 ])
 
