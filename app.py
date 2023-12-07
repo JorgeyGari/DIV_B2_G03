@@ -1,6 +1,6 @@
 from dash import Dash, html
 from map import map_timeline
-from concert import concert_info
+from concert import configure_callbacks, create_dropdown
 
 app = Dash(__name__)
 
@@ -20,9 +20,14 @@ app.layout = html.Div([
     ),
 
     map_timeline,
-    
-    concert_info
+
+    create_dropdown(),
+
+    html.Div(id='concert-info')
+
 ])
+
+configure_callbacks(app)
 
 if __name__ == '__main__':
     app.run(debug=True)
