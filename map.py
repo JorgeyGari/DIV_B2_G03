@@ -73,8 +73,7 @@ map.update_layout(
 def map2concert():
     pass
 
-map_timeline = html.Div
-(
+map_timeline = html.Div(
     [
         dcc.Graph(figure=map),
         dcc.RangeSlider
