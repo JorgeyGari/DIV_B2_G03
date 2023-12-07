@@ -1,11 +1,12 @@
 ## About
 
-Second project for the course Data Integration and Visualization, imparted by Universidad Carlos III de Madrid in Fall 2023.
+Second project for the course Data Integration and Visualization, imparted by Universidad Carlos III de Madrid in Fall 2023.  
 Built by Group 3.
 
 Our project aims to create an application that helps the user find the best price for tickets of a live event (i.e., sports events, concerts, theater plays...) from official distributors, resell platforms and even social media.
 
-This is the visualization part and is based on [darosete/DIV_B1/G03](https://github.com/darosete/DIV_B1_G03/).
+The project has two sections: data integration and data visualization.  
+This repository focuses on visualization and is based on the data integration found in [darosete/DIV_B1_G03](https://github.com/darosete/DIV_B1_G03/).
 
 ## Description
 
