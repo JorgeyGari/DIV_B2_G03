@@ -1,6 +1,5 @@
 from dash import html, dcc, Input, Output, Dash
 import pandas as pd
-import json
 
 # Dataframe
 df = pd.read_json('data.json')
@@ -11,8 +10,7 @@ def get_background_style(artist: str) -> dict:
     The image is retrieved from photos.json.
     :param artist: The artist performing at the concert.
     """
-    with open('photos.json') as f:
-        photos = json.load(f)
+    photos = pd.read_json('photos.json', typ='series')
     return {
         'backgroundImage': f'url({photos[artist][7]})',
         'backgroundSize': 'cover',
