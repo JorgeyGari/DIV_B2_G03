@@ -1,16 +1,16 @@
 from dash import html, dcc, Input, Output, Dash
 import pandas as pd
+import json
 
 # Dataframe
 df = pd.read_json('data.json')
 
-# FIXME: Many concerts share a name, so the dropdown is not unique unless we add the date.
-# It's enough for selecting something while testing, but this should not be the final version.
-# In the final version, the user selects a concert by clicking on the map.
-
-import json
-
-def get_background_style(artist):
+def get_background_style(artist: str) -> dict:
+    """
+    Returns the background image CSS style for the artist.
+    The image is retrieved from photos.json.
+    :param artist: The artist performing at the concert.
+    """
     with open('photos.json') as f:
         photos = json.load(f)
     return {
@@ -23,7 +23,8 @@ def get_background_style(artist):
         #'filter': 'brightness(50%)'
     }
 
-def create_dropdown():
+def create_dropdown() -> html.Div:
+    """Creates the dropdown menu for the concerts."""
     concert_names = []
     for artist in df.columns:
         for i, concert in enumerate(df[artist]["Concerts"]):
@@ -45,9 +46,16 @@ def create_dropdown():
             )
         ]
     )
+# FIXME: Many concerts share a name, so the dropdown is not unique unless we add the date.
+# It's enough for selecting something while developing, but this should not be the final version.
+# In the final version, the user selects a concert by clicking on the map.
 
-def update_concert_info(selection):
-    # print(concert_name)
+def update_concert_info(selection: str | None) -> html.Div:
+    """
+    Updates the concert info based on the dropdown selection.
+    If no selection is made, a default message is displayed.
+    :param selection: The dropdown selection.
+    """
     if selection is None:
         return html.Div(
             [
@@ -91,12 +99,18 @@ def update_concert_info(selection):
             style=get_background_style(artist=selection.split(".")[0])
         )
 
-def configure_callbacks(app):
+def configure_callbacks(app) -> None:
+    """
+    Configures the callbacks for the app.
+    This is a workaround for circular imports.
+    :param app: The Dash app.
+    """
     app.callback(
         Output(component_id='concert-info', component_property='children'),
         Input(component_id='concert-dropdown', component_property='value')
     )(update_concert_info)
 
+# App that only shows the concert info, developing purposes only
 if __name__ == '__main__':
     app = Dash(__name__)
     app.layout = html.Div(
