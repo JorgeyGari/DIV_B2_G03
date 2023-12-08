@@ -15,38 +15,12 @@ from dash import html, dcc, Input, Output, callback
 import pandas as pd
 import plotly.graph_objects as go
 
-latitudes = []
-longitudes = []
-artists = []
-
 # He tenido que borrar manualmente a Kanye West, a SZA y a Lana del Rey. Podemos considerar volver a añadirlos
 df = pd.read_json('data.json')
 
-for artist in df.loc["Concerts"].index:
-    for concert in df.loc["Concerts"][artist]:
-        latitude = concert["Latitude"]
-        longitude = concert["Longitude"]
-
-        while latitude in latitudes: 
-            latitude = str(float(latitude) + 0.005)
-            longitude = str(float(longitude) + 0.005)
-        
-        latitudes.append(latitude)
-        longitudes.append(longitude)
-        artists.append(artist)
-
 mapbox_access_token = "pk.eyJ1IjoicGFibG9zYXZpbmEiLCJhIjoiY2xwbXVreXo4MGN5bTJscXk3YjJwY291ciJ9.Kyrlg9CR1Rdo7wAzD3IAVQ"
 
-map = go.Figure(go.Scattermapbox(
-        lat = latitudes,
-        lon = longitudes,
-        mode='markers',
-        marker=go.scattermapbox.Marker(
-            size=10,
-            color="rgb(255,0,0)"
-        ),
-        text=artists,
-    ))
+map = go.Figure(id="map")
 
 map.update_layout(
     # title="Concerts",
@@ -66,12 +40,54 @@ map.update_layout(
     ),
 )
 
+def date2num(date):
+    broken = date.split("-")
+    numeric = broken[0] * 10000 + broken[2] * 100 + broken[3]
+    return numeric
+
+def month2num(date):
+    numeric = 2024 * 10000 + date * 100
+    return numeric
+
 @callback(
-    Output(component_id='my-output', component_property='children'),
-    Input(component_id='my-input', component_property='value')
+    Output(component_id='map', component_property='figure'),
+    Input(component_id='date-selector', component_property='value')
 )
-def map2concert():
-    pass
+def date2map(selected_months):
+    initial = selected_months[0]
+    final = selected_months[1]
+
+    latitudes = []
+    longitudes = []
+    concerts = []
+
+    for artist in df.loc["Concerts"].index:
+        for concert in df.loc["Concerts"][artist]:
+            if date2num(concert["Date"]) > month2num(initial) and date2num(concert["Date"]) < month2num(final):
+                concert = concert["Concert Name"]
+                latitude = concert["Latitude"]
+                longitude = concert["Longitude"]
+
+                while latitude in latitudes: 
+                    latitude = str(float(latitude) + 0.005)
+                    longitude = str(float(longitude) + 0.005)
+                
+                latitudes.append(latitude)
+                longitudes.append(longitude)
+                concerts.append(concert)
+    
+    map = go.Scattermapbox(
+            lat = latitudes,
+            lon = longitudes,
+            mode='markers',
+            marker=go.scattermapbox.Marker(
+                size=10,
+                color="rgb(255,0,0)"
+            ),
+            text=concerts,
+    )
+
+    return map
 
 map_timeline = html.Div(
     [

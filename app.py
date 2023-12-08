@@ -1,5 +1,5 @@
 from dash import Dash, html
-from map import map_timeline
+# from map import map_timeline
 from concert import configure_callbacks, create_dropdown
 
 app = Dash(__name__)
@@ -19,7 +19,7 @@ app.layout = html.Div([
         ]
     ),
 
-    map_timeline,
+    # map_timeline,
 
     create_dropdown(),
 
