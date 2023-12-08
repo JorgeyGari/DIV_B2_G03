@@ -11,34 +11,15 @@
 
 # Expansión del Mapa: Añadir clusters, crear markers personalizados, asociar a un color por artista
 
+# He tenido que borrar manualmente a Kanye West, a SZA y a Lana del Rey. Podemos considerar volver a añadirlos
+
 from dash import html, dcc, Input, Output, callback
 import pandas as pd
 import plotly.graph_objects as go
 
-# He tenido que borrar manualmente a Kanye West, a SZA y a Lana del Rey. Podemos considerar volver a añadirlos
 df = pd.read_json('data.json')
 
 mapbox_access_token = "pk.eyJ1IjoicGFibG9zYXZpbmEiLCJhIjoiY2xwbXVreXo4MGN5bTJscXk3YjJwY291ciJ9.Kyrlg9CR1Rdo7wAzD3IAVQ"
-
-map = go.Figure(id="map")
-
-map.update_layout(
-    # title="Concerts",
-    autosize=True,
-    hovermode='closest',
-    mapbox=dict(
-        accesstoken=mapbox_access_token,
-        bearing=0,
-        center=dict(
-            lat=39.833333,
-            lon=-98.583333
-        ),
-        pitch=0,
-        zoom=2,
-        # options for style --> basic, streets, outdoors, light, dark, satellite, satellite-streets
-        style = "outdoors"
-    ),
-)
 
 def date2num(date):
     broken = date.split("-")
@@ -48,6 +29,9 @@ def date2num(date):
 def month2num(date):
     numeric = 2024 * 10000 + date * 100
     return numeric
+
+"""
+
 
 @callback(
     Output(component_id='map', component_property='figure'),
@@ -76,7 +60,14 @@ def date2map(selected_months):
                 longitudes.append(longitude)
                 concerts.append(concert)
     
-    map = go.Scattermapbox(
+    map = 
+
+    return map
+
+
+def create_map() -> html.Div:
+    map = go.Figure()
+    map.add_trace(go.Scattermapbox(
             lat = latitudes,
             lon = longitudes,
             mode='markers',
@@ -85,36 +76,58 @@ def date2map(selected_months):
                 color="rgb(255,0,0)"
             ),
             text=concerts,
+    ))
+    map.update_layout(
+        # title ="Concerts",
+        autosize=True,
+        hovermode='closest',
+        mapbox=dict(
+            accesstoken=mapbox_access_token,
+            bearing=0,
+            center=dict(
+                lat=39.833333,
+                lon=-98.583333
+            ),
+            pitch=0,
+            zoom=2,
+            # Options for style --> basic, streets, outdoors, light, dark, satellite, satellite-streets
+            style = "outdoors"
+        ),
     )
 
-    return map
-
-map_timeline = html.Div(
-    [
-        dcc.Graph(figure=map),
-        dcc.RangeSlider
-        (
-            min=1,
-            max=12,
-            step=None,
-            marks = 
-            { 
-                1: "January",
-                2: "February",
-                3: "March",
-                4: "April",
-                5: "May",
-                6: "June",
-                7: "July",
-                8: "August",
-                9: "September",
-                10: "October",
-                11: "November",
-                12: "December"
-            }, 
-            value=[1, 12], 
-            allowCross = False,
-            id="date-selector"
-        )
-    ]
-)
+    return html.Div(
+        [
+            dcc.Graph(figure=map)
+        ]
+    )
+"""    
+def create_map_timeline() -> html.Div:
+    """Creates the map timeline."""
+    return html.Div(
+        [
+            dcc.RangeSlider
+            (
+                min=1,
+                max=12,
+                step=None,
+                marks = 
+                { 
+                    1: "January",
+                    2: "February",
+                    3: "March",
+                    4: "April",
+                    5: "May",
+                    6: "June",
+                    7: "July",
+                    8: "August",
+                    9: "September",
+                    10: "October",
+                    11: "November",
+                    12: "December"
+                }, 
+                value=[1, 12], 
+                allowCross = False,
+                id="date-selector"
+            )
+        ]
+    )
