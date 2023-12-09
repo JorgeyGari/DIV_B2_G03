@@ -1,5 +1,5 @@
 from dash import Dash, html
-from map import configure_callbacks, create_map_timeline
+from map import configure_callbacks_map, create_map_timeline
 from concert import configure_callbacks, create_dropdown
 
 app = Dash(__name__)
@@ -30,6 +30,7 @@ app.layout = html.Div([
 ])
 
 configure_callbacks(app)
+configure_callbacks_map(app)
 
 if __name__ == '__main__':
     app.run(debug=True)

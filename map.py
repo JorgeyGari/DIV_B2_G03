@@ -13,6 +13,7 @@
 
 # He tenido que borrar manualmente a Kanye West, a SZA y a Lana del Rey. Podemos considerar volver a añadirlos
 
+from dash import Dash
 from dash import html, dcc, Input, Output, callback
 import pandas as pd
 import plotly.graph_objects as go
@@ -23,7 +24,7 @@ mapbox_access_token = "pk.eyJ1IjoicGFibG9zYXZpbmEiLCJhIjoiY2xwbXVreXo4MGN5bTJscX
 
 def date2num(date):
     broken = date.split("-")
-    numeric = broken[0] * 10000 + broken[2] * 100 + broken[3]
+    numeric = int(broken[0]) * 10000 + int(broken[1]) * 100 + int(broken[2])
     return numeric
 
 def month2num(date):
@@ -36,12 +37,13 @@ def update_map_info(selection):
 
     latitudes = []
     longitudes = []
-    concerts = []
+    names = []
 
     for artist in df.loc["Concerts"].index:
         for concert in df.loc["Concerts"][artist]:
             if date2num(concert["Date"]) > month2num(initial) and date2num(concert["Date"]) < month2num(final):
-                concert = concert["Concert Name"]
+                name = concert["Concert Name"]
+                
                 latitude = concert["Latitude"]
                 longitude = concert["Longitude"]
 
@@ -51,7 +53,7 @@ def update_map_info(selection):
                 
                 latitudes.append(latitude)
                 longitudes.append(longitude)
-                concerts.append(concert)
+                names.append(name)
     
     map = go.Figure()
     map.add_trace(go.Scattermapbox(
@@ -62,7 +64,7 @@ def update_map_info(selection):
                 size=10,
                 color="rgb(255,0,0)"
             ),
-            text=concerts,
+            text=names,
     ))
     map.update_layout(
         # title ="Concerts",
@@ -119,7 +121,7 @@ def create_map_timeline() -> html.Div:
         ]
     )
 
-def configure_callbacks(app) -> None:
+def configure_callbacks_map(app) -> None:
     """
     Configures the callbacks for the app.
     This is a workaround for circular imports.
@@ -129,3 +131,14 @@ def configure_callbacks(app) -> None:
         Output(component_id='map', component_property='children'),
         Input(component_id='date-selector', component_property='value')
     )(update_map_info)
+
+if __name__ == '__main__':
+    app = Dash(__name__)
+    app.layout = html.Div(
+        [
+            create_map_timeline(),
+            html.Div(id='map')
+        ]
+    )
+    configure_callbacks_map(app)
+    app.run_server(debug=True)
