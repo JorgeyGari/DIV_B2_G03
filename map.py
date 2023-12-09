@@ -9,6 +9,8 @@
 # https://plotly.com/python/scatter-plots-on-maps/
 # https://dash.plotly.com/dash-core-components/geolocation
 
+# Expansión de la Timeline: Añadir una graduación más fina
+
 # Expansión del Mapa: Añadir clusters, crear markers personalizados, asociar a un color por artista
 
 # He tenido que borrar manualmente a Kanye West, a SZA y a Lana del Rey. Podemos considerar volver a añadirlos
@@ -62,9 +64,10 @@ def update_map_info(selection):
             mode='markers',
             marker=go.scattermapbox.Marker(
                 size=10,
-                color="rgb(255,0,0)"
+                color="rgb(0,0,255)"
             ),
             text=names,
+            cluster=dict(enabled=True, color = "rgb(0,0,255)")
     ))
     map.update_layout(
         # title ="Concerts",
