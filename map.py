@@ -30,16 +30,9 @@ def month2num(date):
     numeric = 2024 * 10000 + date * 100
     return numeric
 
-"""
-
-
-@callback(
-    Output(component_id='map', component_property='figure'),
-    Input(component_id='date-selector', component_property='value')
-)
-def date2map(selected_months):
-    initial = selected_months[0]
-    final = selected_months[1]
+def update_map_info(selection):
+    initial = selection[0]
+    final = selection[1]
 
     latitudes = []
     longitudes = []
@@ -60,12 +53,6 @@ def date2map(selected_months):
                 longitudes.append(longitude)
                 concerts.append(concert)
     
-    map = 
-
-    return map
-
-
-def create_map() -> html.Div:
     map = go.Figure()
     map.add_trace(go.Scattermapbox(
             lat = latitudes,
@@ -100,7 +87,7 @@ def create_map() -> html.Div:
             dcc.Graph(figure=map)
         ]
     )
-"""    
+
 def create_map_timeline() -> html.Div:
     """Creates the map timeline."""
     return html.Div(
@@ -131,3 +118,14 @@ def create_map_timeline() -> html.Div:
             )
         ]
     )
+
+def configure_callbacks(app) -> None:
+    """
+    Configures the callbacks for the app.
+    This is a workaround for circular imports.
+    :param app: The Dash app.
+    """
+    app.callback(
+        Output(component_id='map', component_property='children'),
+        Input(component_id='date-selector', component_property='value')
+    )(update_map_info)
