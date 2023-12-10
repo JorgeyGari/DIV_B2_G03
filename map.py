@@ -39,13 +39,11 @@ def update_map_info(selection):
 
     latitudes = []
     longitudes = []
-    names = []
+    artists = []
 
     for artist in df.loc["Concerts"].index:
         for concert in df.loc["Concerts"][artist]:
             if date2num(concert["Date"]) > month2num(initial) and date2num(concert["Date"]) < month2num(final):
-                name = concert["Concert Name"]
-                
                 latitude = concert["Latitude"]
                 longitude = concert["Longitude"]
 
@@ -55,7 +53,7 @@ def update_map_info(selection):
                 
                 latitudes.append(latitude)
                 longitudes.append(longitude)
-                names.append(name)
+                artists.append(artist)
     
     map = go.Figure()
     map.add_trace(go.Scattermapbox(
@@ -66,7 +64,7 @@ def update_map_info(selection):
                 size=10,
                 color="rgb(0,0,255)"
             ),
-            text=names,
+            text=artists,
             cluster=dict(enabled=True, color = "rgb(0,0,255)")
     ))
     map.update_layout(
@@ -87,11 +85,7 @@ def update_map_info(selection):
         ),
     )
 
-    return html.Div(
-        [
-            dcc.Graph(figure=map)
-        ]
-    )
+    return map
 
 def create_map_timeline() -> html.Div:
     """Creates the map timeline."""
@@ -131,7 +125,7 @@ def configure_callbacks_map(app) -> None:
     :param app: The Dash app.
     """
     app.callback(
-        Output(component_id='map', component_property='children'),
+        Output(component_id='map', component_property='figure'),
         Input(component_id='date-selector', component_property='value')
     )(update_map_info)
 
@@ -140,7 +134,7 @@ if __name__ == '__main__':
     app.layout = html.Div(
         [
             create_map_timeline(),
-            html.Div(id='map')
+            html.Div([dcc.Graph(id='map')])
         ]
     )
     configure_callbacks_map(app)

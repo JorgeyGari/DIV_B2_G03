@@ -1,4 +1,4 @@
-from dash import html, dcc, Input, Output, Dash
+from dash import html, dcc, Input, Output, Dash, ALL
 import pandas as pd
 
 # Dataframe
@@ -48,11 +48,49 @@ def create_dropdown() -> html.Div:
 # It's enough for selecting something while developing, but this should not be the final version.
 # In the final version, the user selects a concert by clicking on the map.
 
-def update_concert_info(selection: str | None) -> html.Div:
+# def update_concert_info(selection: str | None) -> html.Div:
+def update_concert_info(clickData) -> html.Div:
+    entry = df[clickData["points"][0]["text"]]["Concerts"][0]
+    default_style = {
+            'color': '#A93F55',
+            'textShadow': '2px 0 0 white, -2px 0 0 white, 0 2px 0 white, 0 -2px 0 white, 1px 1px white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, \
+                                            2px 2px 4px rgba(0, 0, 0, 0.5)',
+            'textAlign': 'left',
+            'fontSize': '40px',
+            'fontFamily': 'Arial'
+        }
+    return html.Div(
+            [
+                html.H3(
+                    entry["Concert Name"],
+                    style={
+                        'color': '#A93F55',
+                        'textShadow': '2px 0 0 white, -2px 0 0 white, 0 2px 0 white, 0 -2px 0 white, 1px 1px white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, \
+                                            2px 2px 4px rgba(0, 0, 0, 0.5)',
+                        'textAlign': 'center',
+                        'fontSize': '70px',
+                        'fontFamily': 'Arial'
+                    }
+                ),
+                html.P(
+                    "♿" if entry["Accessibility Services"] == "Yes" else "",
+                    style=default_style
+                ),
+                html.P("📅 " + entry["Date"],
+                    style=default_style
+                ),
+                html.P("📍 " + entry["Venue"],
+                    style=default_style
+                 ),
+            ],
+            style=get_background_style(artist=clickData["points"][0]["text"])
+        )
     """
     Updates the concert info based on the dropdown selection.
     If no selection is made, a default message is displayed.
     :param selection: The dropdown selection.
+    """
+
     """
     if selection is None:
         return html.Div(
@@ -96,6 +134,7 @@ def update_concert_info(selection: str | None) -> html.Div:
             ],
             style=get_background_style(artist=selection.split(".")[0])
         )
+    """
 
 def configure_callbacks(app) -> None:
     """
@@ -105,7 +144,8 @@ def configure_callbacks(app) -> None:
     """
     app.callback(
         Output(component_id='concert-info', component_property='children'),
-        Input(component_id='concert-dropdown', component_property='value')
+        # Input(component_id='concert-dropdown', component_property='value'),
+        Input(component_id='map', component_property='clickData')
     )(update_concert_info)
 
 # App that only shows the concert info, developing purposes only
