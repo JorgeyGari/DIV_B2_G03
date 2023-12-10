@@ -18,6 +18,8 @@ def get_background_style(artist: str) -> dict:
         'height': '100vh',
         'width': '100vw',
         'position': 'relative',
+        'margin': '0',
+        'padding': '0',
         #'filter': 'brightness(50%)'
     }
 
@@ -68,7 +70,7 @@ def update_concert_info(selection: str | None) -> html.Div:
                                             2px 2px 4px rgba(0, 0, 0, 0.5)',
             'textAlign': 'left',
             'fontSize': '40px',
-            'fontFamily': 'Arial'
+            'fontFamily': 'Jomhuria-Regular'
         }
         return html.Div(
             [
@@ -79,8 +81,8 @@ def update_concert_info(selection: str | None) -> html.Div:
                         'textShadow': '2px 0 0 white, -2px 0 0 white, 0 2px 0 white, 0 -2px 0 white, 1px 1px white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, \
                                             2px 2px 4px rgba(0, 0, 0, 0.5)',
                         'textAlign': 'center',
-                        'fontSize': '70px',
-                        'fontFamily': 'Arial'
+                        'fontSize': '90px',
+                        'fontFamily': 'Jomhuria-Regular'
                     }
                 ),
                 html.P(
@@ -97,7 +99,7 @@ def update_concert_info(selection: str | None) -> html.Div:
             style=get_background_style(artist=selection.split(".")[0])
         )
 
-def configure_callbacks(app) -> None:
+def configure_callbacks(app: Dash) -> None:
     """
     Configures the callbacks for the app.
     This is a workaround for circular imports.
