@@ -44,39 +44,39 @@ def update_concert_info(clickData) -> html.Div:
     else:
         entry = df[clickData["points"][0]["text"]]["Concerts"][0]
         default_style = {
-            'color': '#A93F55',
-            'textShadow': '2px 0 0 white, -2px 0 0 white, 0 2px 0 white, 0 -2px 0 white, 1px 1px white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, \
-                                            2px 2px 4px rgba(0, 0, 0, 0.5)',
-            'textAlign': 'left',
-            'fontSize': '40px',
-            'fontFamily': 'Jomhuria-Regular'
-        }
+                'color': '#A93F55',
+                'textShadow': '2px 0 0 white, -2px 0 0 white, 0 2px 0 white, 0 -2px 0 white, 1px 1px white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, \
+                                                2px 2px 4px rgba(0, 0, 0, 0.5)',
+                'textAlign': 'left',
+                'fontSize': '40px',
+                'fontFamily': 'Jomhuria-Regular'
+            }
         return html.Div(
-            [
-                html.H3(
-                    entry["Concert Name"],
-                    style={
-                        'color': '#A93F55',
-                        'textShadow': '2px 0 0 white, -2px 0 0 white, 0 2px 0 white, 0 -2px 0 white, 1px 1px white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, \
-                                            2px 2px 4px rgba(0, 0, 0, 0.5)',
-                        'textAlign': 'center',
-                        'fontSize': '90px',
-                        'fontFamily': 'Jomhuria-Regular'
-                    }
-                ),
-                html.P(
-                    "♿" if entry["Accessibility Services"] == "Yes" else "",
-                    style=default_style
-                ),
-                html.P("📅 " + entry["Date"],
-                    style=default_style
-                ),
-                html.P("📍 " + entry["Venue"],
-                    style=default_style
-                 ),
-            ],
-            style=get_background_style(artist=selection.split(".")[0])
-        )
+                [
+                    html.H3(
+                        entry["Concert Name"],
+                        style={
+                            'color': '#A93F55',
+                            'textShadow': '2px 0 0 white, -2px 0 0 white, 0 2px 0 white, 0 -2px 0 white, 1px 1px white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, \
+                                                2px 2px 4px rgba(0, 0, 0, 0.5)',
+                            'textAlign': 'center',
+                            'fontSize': '70px',
+                            'fontFamily': 'Jomhuria-Regular'
+                        }
+                    ),
+                    html.P(
+                        "♿" if entry["Accessibility Services"] == "Yes" else "",
+                        style=default_style
+                    ),
+                    html.P("📅 " + entry["Date"],
+                        style=default_style
+                    ),
+                    html.P("📍 " + entry["Venue"],
+                        style=default_style
+                    ),
+                ],
+                style=get_background_style(artist=clickData["points"][0]["text"])
+            )
 
 def configure_callbacks(app: Dash) -> None:
     """
@@ -90,13 +90,13 @@ def configure_callbacks(app: Dash) -> None:
     )(update_concert_info)
 
 # App that only shows the concert info, developing purposes only
-if __name__ == '__main__':
-    app = Dash(__name__)
-    app.layout = html.Div(
-        [
-            create_dropdown(),
-            html.Div(id='concert-info')
-        ]
-    )
-    configure_callbacks(app)
-    app.run_server(debug=True)
+# if __name__ == '__main__':
+#     app = Dash(__name__)
+#     app.layout = html.Div(
+#         [
+#             create_dropdown(),
+#             html.Div(id='concert-info')
+#         ]
+#     )
+#     configure_callbacks(app)
+#     app.run_server(debug=True)
