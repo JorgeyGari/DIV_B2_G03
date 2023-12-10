@@ -1,6 +1,6 @@
 from dash import Dash, html, dcc
 from map import configure_callbacks_map, create_map_timeline
-from concert import configure_callbacks, create_dropdown
+from concert import configure_callbacks
 
 app = Dash(__name__, suppress_callback_exceptions = True)
 
