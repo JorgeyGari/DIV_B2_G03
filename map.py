@@ -9,10 +9,13 @@
 # https://plotly.com/python/scatter-plots-on-maps/
 # https://dash.plotly.com/dash-core-components/geolocation
 
+# Expansión de la Timeline: Añadir una graduación más fina
+
 # Expansión del Mapa: Añadir clusters, crear markers personalizados, asociar a un color por artista
 
 # He tenido que borrar manualmente a Kanye West, a SZA y a Lana del Rey. Podemos considerar volver a añadirlos
 
+from dash import Dash
 from dash import html, dcc, Input, Output, callback
 import pandas as pd
 import plotly.graph_objects as go
@@ -23,7 +26,7 @@ mapbox_access_token = "pk.eyJ1IjoicGFibG9zYXZpbmEiLCJhIjoiY2xwbXVreXo4MGN5bTJscX
 
 def date2num(date):
     broken = date.split("-")
-    numeric = broken[0] * 10000 + broken[2] * 100 + broken[3]
+    numeric = int(broken[0]) * 10000 + int(broken[1]) * 100 + int(broken[2])
     return numeric
 
 def month2num(date):
@@ -36,12 +39,11 @@ def update_map_info(selection):
 
     latitudes = []
     longitudes = []
-    concerts = []
+    artists = []
 
     for artist in df.loc["Concerts"].index:
         for concert in df.loc["Concerts"][artist]:
             if date2num(concert["Date"]) > month2num(initial) and date2num(concert["Date"]) < month2num(final):
-                concert = concert["Concert Name"]
                 latitude = concert["Latitude"]
                 longitude = concert["Longitude"]
 
@@ -51,7 +53,7 @@ def update_map_info(selection):
                 
                 latitudes.append(latitude)
                 longitudes.append(longitude)
-                concerts.append(concert)
+                artists.append(artist)
     
     map = go.Figure()
     map.add_trace(go.Scattermapbox(
@@ -60,9 +62,10 @@ def update_map_info(selection):
             mode='markers',
             marker=go.scattermapbox.Marker(
                 size=10,
-                color="rgb(255,0,0)"
+                color="rgb(0,0,255)"
             ),
-            text=concerts,
+            text=artists,
+            cluster=dict(enabled=True, color = "rgb(0,0,255)")
     ))
     map.update_layout(
         # title ="Concerts",
@@ -82,11 +85,7 @@ def update_map_info(selection):
         ),
     )
 
-    return html.Div(
-        [
-            dcc.Graph(figure=map)
-        ]
-    )
+    return map
 
 def create_map_timeline() -> html.Div:
     """Creates the map timeline."""
@@ -119,13 +118,24 @@ def create_map_timeline() -> html.Div:
         ]
     )
 
-def configure_callbacks(app) -> None:
+def configure_callbacks_map(app) -> None:
     """
     Configures the callbacks for the app.
     This is a workaround for circular imports.
     :param app: The Dash app.
     """
     app.callback(
-        Output(component_id='map', component_property='children'),
+        Output(component_id='map', component_property='figure'),
         Input(component_id='date-selector', component_property='value')
     )(update_map_info)
+
+if __name__ == '__main__':
+    app = Dash(__name__)
+    app.layout = html.Div(
+        [
+            create_map_timeline(),
+            html.Div([dcc.Graph(id='map')])
+        ]
+    )
+    configure_callbacks_map(app)
+    app.run_server(debug=True)

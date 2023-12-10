@@ -1,8 +1,8 @@
-from dash import Dash, html
-from map import configure_callbacks, create_map_timeline
-from concert import configure_callbacks, create_dropdown
+from dash import Dash, html, dcc
+from map import configure_callbacks_map, create_map_timeline
+from concert import configure_callbacks
 
-app = Dash('Eventful')
+app = Dash('Eventful', suppress_callback_exceptions = True)
 
 app.layout = html.Div(
     [
@@ -20,11 +20,11 @@ app.layout = html.Div(
             ]
         ),
 
-    html.Div(id = 'map'),
+    html.Div([dcc.Graph(id='map')]),
 
     create_map_timeline(),
 
-        create_dropdown(),
+    # create_dropdown(),
 
         html.Div(id='concert-info')
 
@@ -39,6 +39,7 @@ app.layout = html.Div(
 )
 
 configure_callbacks(app)
+configure_callbacks_map(app)
 
 if __name__ == '__main__':
     app.run(debug=True)
