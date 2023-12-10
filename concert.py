@@ -50,6 +50,8 @@ def create_dropdown() -> html.Div:
 
 # def update_concert_info(selection: str | None) -> html.Div:
 def update_concert_info(clickData) -> html.Div:
+    # The show is still not selected correctly (I am getting the first one for each artist, not the correct one)
+    # Also, the dropdown is currently eliminated
     entry = df[clickData["points"][0]["text"]]["Concerts"][0]
     default_style = {
             'color': '#A93F55',
