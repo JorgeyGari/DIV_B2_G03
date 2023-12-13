@@ -11,6 +11,11 @@ body {
 }
 #titulo {
     background-color: #19323C;
+    text-align: center;
+    font-family: 'Jomhuria';
+    font-size: 200px;
+
+    padding: 0;
 }
 
 #map {
@@ -24,4 +29,5 @@ body {
 .Intro {
     background-color: #19323C;
     margin: 0;
+    color: #FF9666;
 }

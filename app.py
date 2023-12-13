@@ -12,13 +12,16 @@ app = Dash('Eventful', external_stylesheets=external_stylesheets, suppress_callb
 
 app.layout = html.Div(
     [
-        html.H1('EVENTFUL', id='titulo'), #Page title
+        html.Div(['EVENTFUL', 
+                  html.Img(src=app.get_asset_url('logo.jpg'), 
+                           alt='Logo', 
+                           style={'width': '200px', 'height': 'auto'})], id='titulo'),  # Page title
 
         # Navigation bar
         html.Div( className='Intro',
             children =
             [
-                html.Div([html.A("Artists", href="artists-title")], style={'scroll-behaviour': 'smooth'}),
+                html.Div([html.A("Artists", href="artists-title")]),
                 html.Div([html.A("Concerts", href="#concerts")])
             ]
         ), # Navigation bar
