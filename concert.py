@@ -48,7 +48,7 @@ def update_concert_info(clickData) -> html.Div:
     if clickData is None:
         return html.Div(
             [
-                html.H3("Select a concert to see its information.")
+                html.H3("SELECT A CONCERT TO SEE ITS INFORMATION", style={'color': '#FF9666'})
             ]
         )
     else:

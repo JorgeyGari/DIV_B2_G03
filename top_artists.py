@@ -1,15 +1,8 @@
-from dash import Dash, html, Input, Output, dcc, callback_context, dash
-import dash_vtk
+from dash import Dash, html, Input, Output, dcc, callback_context
 import pandas as pd
 import random
 import json
 
-# Font icons
-# CSS y js
-external_stylesheets = ['assets/top_artists.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css']
-external_scripts = ['assets/top_artists.js']
-app = Dash(__name__, external_stylesheets=external_stylesheets, 
-           external_scripts=external_scripts, suppress_callback_exceptions=True)
 
 # Dataframe
 df = pd.DataFrame(pd.read_json('data.json'))
@@ -30,7 +23,7 @@ for i in range(num_bubbles):
 
 artists_info = html.Div(
         children=[
-            html.H1('ARTISTS', id='artists-title'),
+            html.H1('TOP ARTISTS', id='artists-title'),
 
             html.Div(
                 [
@@ -41,7 +34,7 @@ artists_info = html.Div(
                                     html.I(className='fa fa-search', id='Search-icon'),
                                     dcc.Input(id='search', value='', type='text', placeholder= ' Search...',
                                             style={'borderRadius': '10px', 'fontSize': '15px', 'backgroundColor': '#B8938E',
-                                                    'border': '5px solid #B8938E'}),
+                                                    'border': '10px solid #B8938E'}),
                                 ],
                                 id='Search-bar'
                             ),
@@ -114,36 +107,3 @@ def display_results(filtered_artists):
     search_term = callback_context.triggered[0]['prop_id'].split('.')[0] if callback_context.triggered else ''
     return [html.P(f'{index + 1}. {artist}', className='artistas-encontrados') for index, artist in enumerate(filtered_artists)]
 
-
-# def configure_callbacks_hide_artists(app: Dash) -> None:
-#     """
-#     Configures the callbacks for the app.
-#     This is a workaround for circular imports.
-#     :param app: The Dash app.
-#     """
-#     app.callback(
-#         Output(component_id='my-output', component_property='data'),
-#         Input(component_id='search', component_property='value')
-#     )(update_results)
-
-
-# # Nuevo callback para ocultar las burbujas al hacer clic en un artista
-# @app.callback(
-#     Output('resultados', 'style'),
-#     [Input(f'bubble{i}', 'n_clicks') for i in range(1, num_bubbles)]
-# )
-# def hide_artists(*args):
-#     ctx = callback_context
-#     if not ctx.triggered_id:
-#         return dash.no_update
-
-#     # Si alguna burbuja ha sido clicada, oculta los artistas
-#     if any(args):
-#         return {'display': 'none'}
-#     else:
-#         return dash.no_update
-
-    
-
-if __name__ == '__main__':
-    app.run(debug=True)

@@ -96,26 +96,26 @@ def create_map_timeline() -> html.Div:
                 min=1,
                 max=12,
                 step=None,
-                marks = 
-                { 
-                    1: "January",
-                    2: "February",
-                    3: "March",
-                    4: "April",
-                    5: "May",
-                    6: "June",
-                    7: "July",
-                    8: "August",
-                    9: "September",
-                    10: "October",
-                    11: "November",
-                    12: "December"
+                marks = { 
+                    1: {'label': "January", 'style': {'fontSize': '30px', 'color': '#FF9666'}},
+                    2: {'label': "February", 'style': {'fontSize': '30px', 'color': '#FF9666'}},
+                    3: {'label': "March", 'style': {'fontSize': '30px', 'color': '#FF9666'}},
+                    4: {'label': "April", 'style': {'fontSize': '30px', 'color': '#FF9666'}},
+                    5: {'label': "May", 'style': {'fontSize': '30px', 'color': '#FF9666'}},
+                    6: {'label': "June", 'style': {'fontSize': '30px', 'color': '#FF9666'}},
+                    7: {'label': "July", 'style': {'fontSize': '30px', 'color': '#FF9666'}},
+                    8: {'label': "August", 'style': {'fontSize': '30px', 'color': '#FF9666'}},
+                    9: {'label': "September", 'style': {'fontSize': '30px', 'color': '#FF9666'}},
+                    10: {'label': "October", 'style': {'fontSize': '30px', 'color': '#FF9666'}},
+                    11: {'label': "November", 'style': {'fontSize': '30px', 'color': '#FF9666'}},
+                    12: {'label': "December", 'style': {'fontSize': '30px', 'color': '#FF9666'}}
                 }, 
                 value=[1, 12], 
                 allowCross = False,
                 id="date-selector"
             )
-        ]
+        ],
+        id= 'date-slider'
     )
 
 def configure_callbacks_map(app) -> None:

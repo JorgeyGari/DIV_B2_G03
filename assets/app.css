@@ -1,33 +1,56 @@
 @font-face {
-    font-family: 'Jomhuria';
+    font-family: 'Jomhuria-Regular'; 
     src: url('Jomhuria-Regular.ttf');
 }
 
+/* Body and title*/
 body {
-    background-color: #19323C;
-    margin: 0;
+    margin: 10px;
     padding: 0;
-    font-family: 'Jomhuria';
+    overflow-x: hidden;
+    font-family: "Jomhuria-Regular";
+    font-size: 2rem;
 }
 #titulo {
     background-color: #19323C;
+    color: #A93F55;
     text-align: center;
     font-family: 'Jomhuria';
-    font-size: 200px;
-
+    font-size: 210px;
     padding: 0;
-}
-
-#map {
-    background-color: #19323C;
-}
-
-#date-selector {
-    background-color: #19323C;
 }
 
 .Intro {
     background-color: #19323C;
-    margin: 0;
-    color: #FF9666;
+    padding-bottom: 20px;
+}
+
+.Scroll {
+    text-decoration: wavy;
+    font-size: 30px;
+    border-radius: 10px;
+    border: 2px solid purple;
+    box-shadow: 0 0 5px rgb(200, 8, 200);
+    color: white;
+    background-color: #A93F55;
+    padding: 10px;
+}
+/* ------------------------------ MAP ------------------------------ */
+
+#date-slider {
+    padding-bottom: 30px;
+}
+
+/* ---------------------------- ARTISTS ---------------------------- */
+
+#artists-title {
+    text-align: center;
+    color: #A93F55;
+    font-size: 80px;
+}
+
+#Search-icon{
+    color: #A93F55; 
+    padding-right: 10px;
+    padding-left: 8%;
 }

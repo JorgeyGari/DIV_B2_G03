@@ -15,18 +15,19 @@ app.layout = html.Div(
         html.Div(['EVENTFUL', 
                   html.Img(src=app.get_asset_url('logo.jpg'), 
                            alt='Logo', 
-                           style={'width': '200px', 'height': 'auto'})], id='titulo'),  # Page title
+                           style={'width': '180px', 'height': 'auto'})], id='titulo'),  # Page title
 
         # Navigation bar
-        html.Div( className='Intro',
+        html.Div(
             children =
             [
-                html.Div([html.A("Artists", href="artists-title")]),
-                html.Div([html.A("Concerts", href="#concerts")])
-            ]
+                html.Div([html.A("GO TO ARTISTS", href="#artists-title", className='Scroll', style={'margin-right': '10px'}),
+                        html.A("GO TO CONCERTS", href="#concert-info", className='Scroll')])
+            ], 
+            className='Intro'
         ), # Navigation bar
 
-    html.Div([dcc.Graph(id='map')]),
+    html.Div([dcc.Graph(id='map',style={'width': '100%', 'height': '90vh'})]),
 
     create_map_timeline(),
 
@@ -36,8 +37,8 @@ app.layout = html.Div(
 
     style =
     {
-        'backgroundColor': '#F0F0F0',
-        'margin': '10%',
+        'backgroundColor': '#19323C',
+        'margin': '7%',
         'fontFamily': 'Jomhuria-Regular'
     }
 )
