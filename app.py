@@ -15,7 +15,7 @@ app.layout = html.Div(
         html.Div(['EVENTFUL', 
                   html.Img(src=app.get_asset_url('logo.jpg'), 
                            alt='Logo', 
-                           style={'width': '180px', 'height': 'auto'})], id='titulo'),  # Page title
+                           style={'width': '185px', 'height': 'auto'})], id='titulo'),  # Page title
 
         # Navigation bar
         html.Div(
