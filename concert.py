@@ -1,8 +1,24 @@
-from dash import html, dcc, Input, Output, Dash, ALL
+from dash import html, Input, Output, Dash, ALL
 import pandas as pd
 
 # Dataframe
 df = pd.read_json('data.json')
+
+# Month number to month abbreviation
+month_dict = {
+    "01": "Jan",
+    "02": "Feb",
+    "03": "Mar",
+    "04": "Apr",
+    "05": "May",
+    "06": "Jun",
+    "07": "Jul",
+    "08": "Aug",
+    "09": "Sep",
+    "10": "Oct",
+    "11": "Nov",
+    "12": "Dec",
+}
 
 def get_background_style(artist: str) -> dict:
     """
@@ -14,27 +30,21 @@ def get_background_style(artist: str) -> dict:
     return {
         'backgroundImage': f'url({photos[artist][7]})',
         'backgroundSize': 'cover',
-        'backgroundPosition': 'center',
-        'height': '100vh',
-        'width': '100vw',
-        'position': 'relative',
-        'margin': '0',
-        'padding': '0',
-        #'filter': 'brightness(50%)'
+        'backgroundPosition': 'center'
+        # 'height': '100vh',
+        # 'width': '100vw',
+        # 'position': 'relative',
+        # 'margin': '0',
+        # 'padding': '0',
     }
 
-# FIXME: Many concerts share a name, so the dropdown is not unique unless we add the date.
-# It's enough for selecting something while developing, but this should not be the final version.
-# In the final version, the user selects a concert by clicking on the map.
-
-# def update_concert_info(selection: str | None) -> html.Div:
 def update_concert_info(clickData) -> html.Div:
     """
     Updates the concert info based on the map.
     If no selection is made, a default message is displayed.
     :param selection: The clickData from the map.
     """
-    # The show is still not selected correctly (I am getting the first one for each artist, not the correct one)
+    # FIXME: The show is still not selected correctly (map returns the first one for each artist, not the correct one)
     if clickData is None:
         return html.Div(
             [
@@ -68,11 +78,104 @@ def update_concert_info(clickData) -> html.Div:
                         "♿" if entry["Accessibility Services"] == "Yes" else "",
                         style=default_style
                     ),
-                    html.P("📅 " + entry["Date"],
-                        style=default_style
+                    # html.P(
+                    #     "🎫 " + entry["Ticket Price"],
+                    #     style=default_style
+                    # ),
+                    html.Div(
+                        [
+                            html.Div(
+                                html.P(
+                                    [
+                                        html.Span(
+                                            entry["Date"].split("-")[2],
+                                            style={
+                                                'font-size': '120px',
+                                                'font-weight': 'bold',
+                                                'display': 'block',
+                                            }
+                                        ),
+                                        html.Span(
+                                            month_dict[entry["Date"].split("-")[1]],
+                                            style={
+                                                'font-size': '60px',
+                                                'display': 'block',
+                                            }
+                                        ),
+                                        html.Span(
+                                            entry["Date"].split("-")[0],
+                                            style={
+                                                'font-size': '40px',
+                                                'opacity': '0.8',
+                                                'display': 'block',
+                                            }
+                                        )
+                                    ],
+                                    style={
+                                        'border': '1px solid black',
+                                        'background-color': 'white',
+                                        'opacity': '0.8',
+                                        'text-align': 'center',
+                                        'line-height': '0.5',
+                                        'padding': '10px',
+                                        'margin': '0',  # Updated margin value
+                                        'width': '100px',
+                                        'height': '100px',
+                                    }
+                                ),
+                                style={'flex': '1'}
+                            ),
+                            html.Div(
+                                html.P(
+                                    [
+                                        html.Span(
+                                            entry["Time"].split(":")[0],
+                                            style={
+                                                'font-size': '120px',
+                                                'font-weight': 'bold',
+                                                'display': 'block',
+                                            }
+                                        ),
+                                        html.Span(
+                                            ":" + entry["Time"].split(":")[1],
+                                            style={
+                                                'font-size': '100px',
+                                                'opacity': '0.8',
+                                                'display': 'block',
+                                            }
+                                        )
+                                    ],
+                                    style={
+                                        'border': '1px solid black',
+                                        'background-color': 'white',
+                                        'opacity': '0.8',
+                                        'text-align': 'right',
+                                        'line-height': '0.5',
+                                        'padding': '10px',
+                                        'margin': '0',  # Updated margin value
+                                        'width': '100px',
+                                        'height': '100px',
+                                    }
+                                ),
+                                style={'flex': '1'}
+                            ),
+                        ],
+                        style={
+                            'display': 'flex',
+                            'flexDirection': 'column',
+                            'gap': '0',  # Remove space between grid cells
+                        }
                     ),
-                    html.P("📍 " + entry["Venue"],
-                        style=default_style
+                    html.P(
+                        [
+                            "📍 ",
+                            html.A(
+                                entry["Venue"],
+                                href=f"https://www.google.com/maps/search/?api=1&query={entry['Venue']}",
+                                target="_blank",
+                                style=default_style
+                            )
+                        ]
                     ),
                 ],
                 style=get_background_style(artist=clickData["points"][0]["text"])
