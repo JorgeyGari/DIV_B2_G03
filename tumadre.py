@@ -28,9 +28,10 @@ bubble_size = []
 for i in range(num_bubbles):
     bubble_size.append(str(250 - 8 * i))
 
+
 artists_info = html.Div(
         children=[
-            html.H1('ARTISTS', id='artists-title'),
+            html.H1('ARTISTS', id='title'),
 
             html.Div(
                 [
@@ -79,71 +80,14 @@ artists_info = html.Div(
         ]
     )
 
-def configure_callbacks_update_results(app: Dash) -> None:
+
+def configure_callbacks_artists(app: Dash) -> None:
     """
     Configures the callbacks for the app.
     This is a workaround for circular imports.
     :param app: The Dash app.
     """
     app.callback(
-        Output(component_id='my-output', component_property='data'),
-        Input(component_id='search', component_property='value')
-    )(update_results)
-
-
-def update_results(search_term):
-    if not search_term:
-        return artists  # Devuelve todos los artistas si el término de búsqueda está vacío
-
-    filtered_artists = [artist for artist in artists if artist.lower().startswith(search_term.lower())]
-    return filtered_artists
-
-
-def configure_callbacks_display_results(app: Dash) -> None:
-    """
-    Configures the callbacks for the app.
-    This is a workaround for circular imports.
-    :param app: The Dash app.
-    """
-    app.callback(
-    Output('resultados', 'children'),
-    [Input('my-output', 'data')]
-    )(display_results)
-
-def display_results(filtered_artists):
-    search_term = callback_context.triggered[0]['prop_id'].split('.')[0] if callback_context.triggered else ''
-    return [html.P(f'{index + 1}. {artist}', className='artistas-encontrados') for index, artist in enumerate(filtered_artists)]
-
-
-# def configure_callbacks_hide_artists(app: Dash) -> None:
-#     """
-#     Configures the callbacks for the app.
-#     This is a workaround for circular imports.
-#     :param app: The Dash app.
-#     """
-#     app.callback(
-#         Output(component_id='my-output', component_property='data'),
-#         Input(component_id='search', component_property='value')
-#     )(update_results)
-
-
-# # Nuevo callback para ocultar las burbujas al hacer clic en un artista
-# @app.callback(
-#     Output('resultados', 'style'),
-#     [Input(f'bubble{i}', 'n_clicks') for i in range(1, num_bubbles)]
-# )
-# def hide_artists(*args):
-#     ctx = callback_context
-#     if not ctx.triggered_id:
-#         return dash.no_update
-
-#     # Si alguna burbuja ha sido clicada, oculta los artistas
-#     if any(args):
-#         return {'display': 'none'}
-#     else:
-#         return dash.no_update
-
-    
-
-if __name__ == '__main__':
-    app.run(debug=True)
+        Output(component_id='artists-info', component_property='children'),
+        Input(component_id='#artists', component_property='clickData')
+    )(create_artists_info)
