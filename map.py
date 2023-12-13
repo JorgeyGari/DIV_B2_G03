@@ -68,9 +68,9 @@ def update_map_info(selection):
             cluster=dict(enabled=True, color = "rgb(0,0,255)")
     ))
     map.update_layout(
-        # title ="Concerts",
         autosize=True,
         hovermode='closest',
+        paper_bgcolor = '#19323C',
         mapbox=dict(
             accesstoken=mapbox_access_token,
             bearing=0,
@@ -81,7 +81,7 @@ def update_map_info(selection):
             pitch=0,
             zoom=2,
             # Options for style --> basic, streets, outdoors, light, dark, satellite, satellite-streets
-            style = "outdoors"
+            style = "outdoors",
         ),
     )
 
