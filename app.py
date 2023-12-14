@@ -2,7 +2,7 @@ from dash import Dash, html, dcc
 from map import configure_callbacks_map, create_map_timeline
 from concert import configure_callbacks
 from top_artists import configure_callbacks_display_results, configure_callbacks_update_results, artists_info
-
+from song import configure_callbacks_songs
 # Font icons and CSS
 external_stylesheets = ['./assets/app.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css']
 
@@ -32,7 +32,8 @@ app.layout = html.Div(
     create_map_timeline(),
 
         html.Div(id='concert-info'),
-        artists_info
+        artists_info,
+        html.Div(id='song-info')
     ],
 
     style =
@@ -47,6 +48,6 @@ configure_callbacks(app)
 configure_callbacks_map(app)
 configure_callbacks_update_results(app)
 configure_callbacks_display_results(app)
-
+configure_callbacks_songs(app)
 if __name__ == '__main__':
     app.run(debug=True)

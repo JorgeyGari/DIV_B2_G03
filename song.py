@@ -51,9 +51,9 @@ def error_figure():
     error_figure = go.Scatter(x=[5],
                  y=[5],
                  mode='text',
-                 text=['No data available for selected song'],
+                 text=['NO DATA AVAILABLE FOR SELECTED SONG'],
                  marker={'opacity': 0.3},
-                 textfont={'size': 60}
+                 textfont={'size': 35}
                 )
 
     return error_figure
@@ -186,7 +186,7 @@ def checkValue(clickData):
 def update_song_info(clickData):
     return html.Div(
     [
-        html.H2(children='Songs', style={'textAlign':'left'}),
+        html.H2(children='SONGS', style={'textAlign':'left', 'color': '#FF9666'}),
         dcc.Dropdown(
             id='song_dropdown',
             options=checkOptions(clickData),
@@ -194,8 +194,8 @@ def update_song_info(clickData):
         ),
 
         html.Div([
-            html.P('Album: ',id='album-cover-text', style={'font-size': 24}),
-            html.P(id='album-name', style={'font-size': 24}),
+            html.P('Album: ',id='album-cover-text', style={'font-size': 24, 'color': '#FF9666'}),
+            html.P(id='album-name', style={'font-size': 24, 'color': '#FF9666'}),
             html.A(html.Img(id='album-photo', style={'height':'7vw', 'width':'7vw', 'cursor': 'pointer'}),
                    id='song-link', href='', target='_blank')
         ],id="album-div"),
@@ -203,7 +203,7 @@ def update_song_info(clickData):
         html.Div(id="wordcloud-div"),
 
         html.Div([
-            html.P('Most played songs in recent concerts: ', style={'font-size': 18}),
+            html.P('Most played songs in recent concerts: ', style={'font-size': 18, 'color': '#FF9666'}),
             html.Div(id="setlist-div")
         ])
     ]
