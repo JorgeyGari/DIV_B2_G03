@@ -1,5 +1,7 @@
-from dash import html, Input, Output, Dash, ALL
+from dash import html, Input, Output, Dash, dcc
 import pandas as pd
+import plotly.graph_objects as go
+import forex_python.converter as forex_python
 
 # Dataframe
 df = pd.read_json('data.json')
@@ -52,7 +54,33 @@ def update_concert_info(clickData) -> html.Div:
             ]
         )
     else:
-        entry = df[clickData["points"][0]["text"]]["Concerts"][0]
+        concerts = df[clickData["points"][0]["text"]]["Concerts"]
+        entry = concerts[0]
+        ticketmaster_prices = {}
+        for concert in concerts:
+            if concert["Currency"] != "USD":
+                c = forex_python.CurrencyRates()
+                ticketmaster_prices[concert["City"]] = c.convert(concert["Currency"], "USD", concert["Ticketmaster Cheapest Price"])
+            else:
+                ticketmaster_prices[concert["City"]] = concert["Ticketmaster Cheapest Price"]
+        price_comparison = go.Figure(data=[go.Bar(
+                                                x=list(ticketmaster_prices.keys()),
+                                                y=list(ticketmaster_prices.values()),
+                                                marker_color='#A93F55',
+                                                text=list(ticketmaster_prices.values()),
+                                                textposition='auto',
+                                                texttemplate='$%{text:.2s}',
+                                                hoverlabel=dict(bgcolor='#A93F55',
+                                                font_size=20, 
+                                                font_family='Jomhuria-Regular'),
+                                                )])
+
+        # Set background color
+        price_comparison.update_layout(
+            plot_bgcolor='#19323C',
+            paper_bgcolor='#19323C',
+            title_text="Price comparison for this artist's performances in other cities"
+        )
         default_style = {
                 'color': '#A93F55',
                 'textShadow': '2px 0 0 white, -2px 0 0 white, 0 2px 0 white, 0 -2px 0 white, 1px 1px white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, \
@@ -177,9 +205,11 @@ def update_concert_info(clickData) -> html.Div:
                             )
                         ]
                     ),
+                    dcc.Graph(figure=price_comparison),
                 ],
                 style=get_background_style(artist=clickData["points"][0]["text"])
             )
+    
 
 def configure_callbacks(app: Dash) -> None:
     """
@@ -191,15 +221,3 @@ def configure_callbacks(app: Dash) -> None:
         Output(component_id='concert-info', component_property='children'),
         Input(component_id='map', component_property='clickData')
     )(update_concert_info)
-
-# App that only shows the concert info, developing purposes only
-# if __name__ == '__main__':
-#     app = Dash(__name__)
-#     app.layout = html.Div(
-#         [
-#             create_dropdown(),
-#             html.Div(id='concert-info')
-#         ]
-#     )
-#     configure_callbacks(app)
-#     app.run_server(debug=True)
