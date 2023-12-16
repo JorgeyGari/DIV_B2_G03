@@ -13,9 +13,9 @@ app = Dash('Eventful', external_stylesheets=external_stylesheets, suppress_callb
 app.layout = html.Div(
     [
         html.Div(['EVENTFUL', 
-                  html.Img(src=app.get_asset_url('logo.jpg'), 
+                  html.Img(src=app.get_asset_url('logo.svg'), 
                            alt='Logo', 
-                           style={'width': '185px', 'height': 'auto'})], id='titulo'),  # Page title
+                           style={'width': 'auto', 'height': '125px'})], id='titulo'),  # Page title
 
         # Navigation bar
         html.Div(
