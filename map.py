@@ -53,7 +53,7 @@ def update_map_info(selection):
                 
                 latitudes.append(latitude)
                 longitudes.append(longitude)
-                artists.append(artist)
+                artists.append(artist + "*" + concert["Date"])
     
     map = go.Figure()
     map.add_trace(go.Scattermapbox(
@@ -77,7 +77,6 @@ def update_map_info(selection):
             ),
             pitch=0,
             zoom=2,
-            # Options for style --> basic, streets, outdoors, light, dark, satellite, satellite-streets
             style = "dark",
         ),
     )

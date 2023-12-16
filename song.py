@@ -18,7 +18,8 @@ def wordCloud(song, clickData):
        # Check if user has clicked an artist
        return error_figure()
     else:
-        artist = clickData["points"][0]["text"]
+        click = clickData["points"][0]["text"]
+        [artist, date] = click.split("*")
         if song == 'Nothing' or song == None: # Check if a user has selected song
             # If not, default to their first song
             song = songs_of_artist(artist)[0]
@@ -99,7 +100,8 @@ def showalbumname(song, clickData):
     """Function to obtain the name of an album from the dataset"""
     if not clickData:
         return None
-    artist = clickData["points"][0]["text"]
+    click = clickData["points"][0]["text"]
+    [artist, date] = click.split("*")
     # Error handling
     if song == 'Nothing' or song == None:
         song = songs_of_artist(artist)[0]
@@ -111,7 +113,8 @@ def showalbumcover(song, clickData):
     """Function to obtain the cover of an album from the dataset"""
     if not clickData:
         return None
-    artist = clickData["points"][0]["text"]
+    click = clickData["points"][0]["text"]
+    [artist, date] = click.split("*")
     # Error handling
     if song == 'Nothing' or song == None:
         song = songs_of_artist(artist)[0]
@@ -123,7 +126,8 @@ def createlink(song, clickData):
     """Function to obtain the url of a song from the dataset"""
     if not clickData:
         return None
-    artist = clickData["points"][0]["text"]
+    click = clickData["points"][0]["text"]
+    [artist, date] = click.split("*")
     # Error handling
     if song == 'Nothing' or song == None:
         song = songs_of_artist(artist)[0]
@@ -134,7 +138,8 @@ def createlink(song, clickData):
 def setlistGraph(song,clickData):
     if not clickData:
         return None
-    artist = clickData["points"][0]["text"]
+    click = clickData["points"][0]["text"]
+    [artist, date] = click.split("*")
     # Error handling
     if song == 'Nothing' or song == None:
         song = songs_of_artist(artist)[0]
@@ -174,14 +179,18 @@ def checkOptions(clickData):
     if not clickData:
         return [{'label': 'no data', 'value': 'no data'}]
     else:
-        return [{'label': song, 'value': song} for song in songs_of_artist(clickData["points"][0]["text"])]
+        click = clickData["points"][0]["text"]
+        [artist, date] = click.split("*")
+        return [{'label': song, 'value': song} for song in songs_of_artist(artist)]
 
 def checkValue(clickData):
     """Function to show the selected song in the dropdown"""
     if not clickData:
         return "Nothing"
     else:
-        songs_of_artist(clickData["points"][0]["text"])[0]
+        click = clickData["points"][0]["text"]
+        [artist, date] = click.split("*")
+        songs_of_artist(artist)[0]
 
 def update_song_info(clickData):
     return html.Div(

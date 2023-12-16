@@ -54,8 +54,12 @@ def update_concert_info(clickData) -> html.Div:
             ]
         )
     else:
-        concerts = df[clickData["points"][0]["text"]]["Concerts"]
-        entry = concerts[0]
+        click = clickData["points"][0]["text"]
+        [artist, date] = click.split("*")
+        concerts = df[artist]["Concerts"]
+        concert = [element for element in concerts if element['Date'] == date]
+        entry = concert[0]
+
         ticketmaster_prices = {}
         for concert in concerts:
             if concert["Currency"] != "USD":
@@ -210,7 +214,7 @@ def update_concert_info(clickData) -> html.Div:
                     ),
                     dcc.Graph(figure=price_comparison),
                 ],
-                style=get_background_style(artist=clickData["points"][0]["text"])
+                style=get_background_style(artist=artist)
             )
     
 

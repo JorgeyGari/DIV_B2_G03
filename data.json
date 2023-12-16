@@ -2,23 +2,6 @@
     "Taylor Swift": {
         "Concerts": [
             {
-                "Concert Name": "Taylor Swift | The Eras Tour - VIP Packages",
-                "Concert URL": "https://www.ticketmaster.es/event/taylor-swift-%7C-the-eras-tour-vip-packages-tickets/36475?language=en-us",
-                "Date": "2024-05-30",
-                "Time": "18:30:00",
-                "Timezone": "Europe/Madrid",
-                "Ticketmaster Cheapest Price": 249.0,
-                "Seatgeek Cheapest Price": "Inexistent",
-                "Currency": "EUR",
-                "Venue": "Estadio Santiago Bernab\u00e9u",
-                "Latitude": "40.45303",
-                "Longitude": "-3.68833",
-                "City": "Madrid",
-                "Country": "Spain",
-                "Main Genre": "Rock",
-                "Accessibility Services": "No"
-            },
-            {
                 "Concert Name": "Taylor Swift | The Eras Tour",
                 "Concert URL": "https://www.ticketmaster.es/event/taylor-swift-%7C-the-eras-tour-tickets/36445?language=en-us",
                 "Date": "2024-05-30",
