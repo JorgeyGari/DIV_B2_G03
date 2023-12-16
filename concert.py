@@ -79,7 +79,8 @@ def update_concert_info(clickData) -> html.Div:
         price_comparison.update_layout(
             plot_bgcolor='#19323C',
             paper_bgcolor='#19323C',
-            title_text="Price comparison for this artist's performances in other cities"
+            title_text="Price comparison for this artist's performances in other cities",
+            font_color="white"
         )
         default_style = {
                 'color': '#A93F55',
