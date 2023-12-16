@@ -11,7 +11,7 @@
 
 # Expansión de la Timeline: Añadir una graduación más fina
 
-# Expansión del Mapa: Añadir clusters, crear markers personalizados, asociar a un color por artista
+# Expansión del Mapa: Crear markers personalizados, asociar a un color por artista
 
 # He tenido que borrar manualmente a Kanye West, a SZA y a Lana del Rey. Podemos considerar volver a añadirlos
 
@@ -57,15 +57,12 @@ def update_map_info(selection):
     
     map = go.Figure()
     map.add_trace(go.Scattermapbox(
+            mode='markers',
             lat = latitudes,
             lon = longitudes,
-            mode='markers',
-            marker=go.scattermapbox.Marker(
-                size=10,
-                color="rgb(0,0,255)"
-            ),
+            marker = {"size" : 12, "symbol" : ["marker"] * len(latitudes), "color" : "rgb(255, 150, 102)"},
             text=artists,
-            cluster=dict(enabled=True, color = "rgb(0,0,255)")
+            hoverinfo='text',
     ))
     map.update_layout(
         autosize=True,
@@ -81,7 +78,7 @@ def update_map_info(selection):
             pitch=0,
             zoom=2,
             # Options for style --> basic, streets, outdoors, light, dark, satellite, satellite-streets
-            style = "outdoors",
+            style = "dark",
         ),
     )
 
