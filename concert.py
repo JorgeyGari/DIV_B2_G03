@@ -1,7 +1,7 @@
 from dash import html, Input, Output, Dash, dcc
 import pandas as pd
 import plotly.graph_objects as go
-import forex_python.converter
+import forex_python.converter as forex_python
 
 # Dataframe
 df = pd.read_json('data.json')
@@ -59,7 +59,8 @@ def update_concert_info(clickData) -> html.Div:
         ticketmaster_prices = {}
         for concert in concerts:
             if concert["Currency"] != "USD":
-                ticketmaster_prices[concert["City"]] = round(forex_python.converter.CurrencyRates().convert(concert["Ticketmaster Cheapest Price"], concert["Currency"], "USD"), 2)
+                c = forex_python.CurrencyRates()
+                ticketmaster_prices[concert["City"]] = c.convert(concert["Currency"], "USD", concert["Ticketmaster Cheapest Price"])
             else:
                 ticketmaster_prices[concert["City"]] = concert["Ticketmaster Cheapest Price"]
         price_comparison = go.Figure(data=[go.Bar(
