@@ -22,12 +22,12 @@ app.layout = html.Div(
             children =
             [
                 html.Div([html.A("GO TO ARTISTS", href="#artists-title", className='Scroll', style={'margin-right': '10px'}),
-                        html.A("GO TO CONCERTS", href="#concert-info", className='Scroll')])
+                        html.A("GO TO CONCERTS", href="#map", className='Scroll')])
             ], 
             className='Intro'
         ), # Navigation bar
 
-    html.Div([dcc.Graph(id='map',style={'width': '100%', 'height': '90vh'})]),
+    html.Div([html.H1("Concert Map"), dcc.Graph(id='map',style={'width': '100%', 'height': '90vh'})], id='map'),
 
     create_map_timeline(),
 
