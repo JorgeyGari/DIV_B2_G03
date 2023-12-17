@@ -24,7 +24,7 @@ for i in range(num_bubbles):
 artists_info = html.Div(
         children=[
             html.H1('TOP ARTISTS', id='artists-title'),
-            html.P("The size of the bubble is proportional to the popularity of the artist. In future versions, the bubbles will be interactive, and redirect to artist's information.", id='bubble-info'),
+            html.P("The size of the bubble is proportional to the popularity of the artist. In future versions, the search bar will allow the user to filter the bubbles and select a specific one. Furthermore, the bubbles will be interactive and redirect to artist's information.", id='bubble-info'),
             
             html.Div(
                 [
