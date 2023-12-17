@@ -40,6 +40,16 @@ body {
 #date-slider {
     padding-bottom: 30px;
 }
+#map-title{
+    color:#A93F55;
+    padding-left: 50px;
+    padding-bottom: 0;
+    padding-top: 20px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+#map-explanation{
+    color: #B8938E;
+}
 
 /* ---------------------------- ARTISTS ---------------------------- */
 

@@ -27,7 +27,10 @@ app.layout = html.Div(
             className='Intro'
         ), # Navigation bar
 
-    html.Div([html.H1("Concert Map"), dcc.Graph(id='map',style={'width': '100%', 'height': '90vh'})], id='map'),
+    html.Div([html.H2("CONCERT MAP :", id='map-title', style={'display': 'inline-block'}), 
+              html.P('to see all concerts in a single venue, please zoom in on its location; otherwise you will only see one of the concerts', 
+                     style={'display': 'inline-block', 'padding-left': '20px'}, id='map-explanation'),
+              dcc.Graph(id='map',style={'width': '100%', 'height': '90vh'})]),
 
     create_map_timeline(),
 
