@@ -54,7 +54,7 @@ def error_figure():
                  mode='text',
                  text=['NO DATA AVAILABLE FOR SELECTED SONG'],
                  marker={'opacity': 0.3},
-                 textfont={'size': 35}
+                 textfont={'size': 50, 'color': '#FF9666', 'family': 'Jomhuria'},
                 )
 
     return error_figure
@@ -91,9 +91,15 @@ def update_wordcloud(song, clickData):
     wordcloud_figure = wordCloud(song, clickData)
     # The layout is of no use
     layout = go.Layout({'xaxis': {'showgrid': False, 'showticklabels': False, 'zeroline': False},
-                    'yaxis': {'showgrid': False, 'showticklabels': False, 'zeroline': False}})
+                    'yaxis': {'showgrid': False, 'showticklabels': False, 'zeroline': False},
+                    'paper_bgcolor': '#19323C',
+                    'plot_bgcolor': '#19323C'})
     # Create the figure and return it
     fig = go.Figure(data=[wordcloud_figure], layout=layout)
+    fig.update_layout(
+        width= 1000,
+        height= 700
+    )
     return dcc.Graph(figure=fig)
 
 def showalbumname(song, clickData):
@@ -149,14 +155,19 @@ def setlistGraph(song,clickData):
     songs = setlist_tracks.keys()
     values = setlist_tracks.values()
     # If the selected song is in the most played songs, highlight it in green
-    colors = ['green' if s == song else 'blue' for s in songs]
+    colors = ['#A93F55' if s == song else '#FF9666' for s in songs]
     # Create the bar graph
     fig = go.Figure(data=[go.Bar(x=list(range(1, len(setlist_tracks)+1)), y=list(values), 
                                  hovertext=list(songs), marker=dict(color=colors))])
     # When hovering show the name of the song
     fig.update_layout(hovermode="x",
-    xaxis_title='Song',
-    yaxis_title='Times Played')
+                    xaxis_title= {'text': 'SONG', 'font': {'color': '#FF9666', 'size': 30, 'family': 'Jomhuria'}},
+                    yaxis_title={'text': 'TIMES PLAYED', 'font': {'color': '#FF9666', 'size': 30, 'family': 'Jomhuria'}},
+                    paper_bgcolor='#19323C',
+                    plot_bgcolor= '#19323C',
+                    xaxis= {'tickfont': {'color': '#FF9666'}},
+                    yaxis= {'tickfont': {'color': '#FF9666'}}
+                    )
     
     return dcc.Graph(figure=fig)
 
@@ -199,7 +210,9 @@ def update_song_info(clickData):
         dcc.Dropdown(
             id='song_dropdown',
             options=checkOptions(clickData),
-            value= checkValue(clickData)
+            value= checkValue(clickData),
+            placeholder='Select a song...',
+            style={'borderRadius': '10px', 'backgroundColor': '#A93F55', 'paddingTop': '2px', 'borderColor': '#A93F55'  }
         ),
 
         html.Div([
@@ -209,10 +222,10 @@ def update_song_info(clickData):
                    id='song-link', href='', target='_blank')
         ],id="album-div"),
 
-        html.Div(id="wordcloud-div"),
+        html.Div(id="wordcloud-div", style={'paddingLeft': '200px'}),
 
         html.Div([
-            html.P('Most played songs in recent concerts: ', style={'font-size': 18, 'color': '#FF9666'}),
+            html.P('Most played songs in recent concerts: ', style={'font-size': 24, 'color': '#FF9666'}),
             html.Div(id="setlist-div")
         ])
     ]
