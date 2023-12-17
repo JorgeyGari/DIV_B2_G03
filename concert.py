@@ -114,10 +114,6 @@ def update_concert_info(clickData) -> html.Div:
                         "♿" if entry["Accessibility Services"] == "Yes" else "",
                         style=default_style
                     ),
-                    # html.P(
-                    #     "🎫 " + entry["Ticket Price"],
-                    #     style=default_style
-                    # ),
                     html.Div(
                         [
                             html.Div(

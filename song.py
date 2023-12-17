@@ -205,14 +205,14 @@ def checkValue(clickData):
 
 def update_song_info(clickData):
     return html.Div(
-    [
+        [
         html.H2(children='SONGS', style={'textAlign':'left', 'color': '#FF9666'}),
         dcc.Dropdown(
             id='song_dropdown',
             options=checkOptions(clickData),
             value= checkValue(clickData),
             placeholder='Select a song...',
-            style={'borderRadius': '10px', 'backgroundColor': '#A93F55', 'paddingTop': '2px', 'borderColor': '#A93F55'  }
+            style={'borderRadius': '10px', 'backgroundColor': '#294854', 'paddingTop': '2px', 'borderColor': '#294854'  }
         ),
 
         html.Div([
@@ -225,8 +225,14 @@ def update_song_info(clickData):
         html.Div(id="wordcloud-div", style={'paddingLeft': '200px'}),
 
         html.Div([
-            html.P('Most played songs in recent concerts: ', style={'font-size': 24, 'color': '#FF9666'}),
-            html.Div(id="setlist-div")
+        html.P('Most played songs in recent concerts: ', style={'font-size': 24, 'color': '#FF9666'}),
+        html.Div(children=[
+            html.P('SONG LEGEND:', id='song-legend', style={'display': 'inline-block', 'margin-right': '50px'}),
+            html.I(className='fas fa-music', id='selected-icon', style={'display': 'inline-block'}),                    
+            html.P('Selected song', id='selected-song', style={'display': 'inline-block', 'margin-left': '15px'}),
+            html.I(className='fas fa-music', id='non-selected-icon', style={'display': 'inline-block', 'margin-left': '30px'}),                    
+            html.P('Most played songs', id='non-selected-song', style={'display': 'inline-block', 'margin-left': '15px'}),
+        ]),
+        html.Div(id="setlist-div")
         ])
-    ]
-)
+        ])

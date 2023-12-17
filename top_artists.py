@@ -24,7 +24,8 @@ for i in range(num_bubbles):
 artists_info = html.Div(
         children=[
             html.H1('TOP ARTISTS', id='artists-title'),
-
+            html.P('The size of the bubble is proportional to the popularity of the artist', id='bubble-info'),
+            
             html.Div(
                 [
                     html.Div(
@@ -65,7 +66,7 @@ artists_info = html.Div(
                         ],
                         style={'grid-area': 'bubbles'},
                         id='bubble-space'
-                    )
+                    ),
                 ],
                 className='layout'
             ),

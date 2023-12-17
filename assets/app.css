@@ -54,3 +54,30 @@ body {
     padding-right: 10px;
     padding-left: 8%;
 }
+
+#bubble-info{
+    color: #B8938E;
+    font-size: 30px;
+    font-family: 'Jomhuria';
+    text-align: center;
+}
+
+/* ----------------------------- SONGS ----------------------------- */
+
+#song-legend{
+    color: #B8938E;
+    font-size: 30px;
+}
+
+#selected-icon, #selected-song{
+    color: #A93F55;
+    font-size: 25px;
+}
+
+#non-selected-icon, #non-selected-song{
+    color: #FF9666;
+    font-size: 25px;
+}
+/* #selected-song{
+    color: #A93F55
+} */
