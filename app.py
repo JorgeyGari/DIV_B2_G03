@@ -22,21 +22,24 @@ app.layout = html.Div(
             children =
             [
                 html.Div([html.A("GO TO ARTISTS", href="#artists-title", className='Scroll', style={'margin-right': '10px'}),
-                        html.A("GO TO CONCERTS", href="#map", className='Scroll')])
+                        html.A("GO TO CONCERTS", href="#map-title", className='Scroll')])
             ], 
             className='Intro'
         ), # Navigation bar
 
-    html.Div([html.H2("CONCERT MAP :", id='map-title', style={'display': 'inline-block'}), 
-              html.P('to see all concerts in a single venue, please zoom in on its location; otherwise you will only see one of the concerts', 
-                     style={'display': 'inline-block', 'padding-left': '20px'}, id='map-explanation'),
-              dcc.Graph(id='map',style={'width': '100%', 'height': '90vh'})]),
+        html.Div([html.P('Eventful is an interactive webpage which allows you to look for concerts by your favorite artists! Select a concert in the map to visualize it, and obtain additional information about the artist and his/her songs. Click on "Go to concerts" to move to the map. Click on "Go to artists" to move to the visualization of the most popular artists of the moment.', 
+                     style={'display': 'inline-block', 'padding-left': '20px'}, id='main-explanation')]),
 
-    create_map_timeline(),
+        html.Div([html.H2("CONCERT MAP", id='map-title', style={'display': 'inline-block'}), 
+                html.P('Click on a concert in the map to display its information. You can filter the available concerts by date using the timeline. To see all concerts in a single venue, please zoom in on its location; otherwise you will only see one of the concerts', 
+                        style={'display': 'inline-block', 'padding-left': '20px'}, id='map-explanation'),
+                dcc.Graph(id='map',style={'width': '100%', 'height': '90vh'})]),
 
-        html.Div(id='concert-info'),
-        artists_info,
-        html.Div(id='song-info')
+        create_map_timeline(),
+
+            html.Div(id='concert-info'),
+            html.Div(id='song-info'),
+            artists_info,
     ],
 
     style =

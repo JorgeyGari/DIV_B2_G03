@@ -207,6 +207,8 @@ def update_song_info(clickData):
     return html.Div(
         [
         html.H2(children='SONGS', style={'textAlign':'left', 'color': '#FF9666'}),
+        html.P("Click on a song to visualize its album (which you can open on Spotify by clicking on it), and its lyrics, when available. Further down, you can see the artist's most played songs", 
+                     style={'display': 'inline-block', 'padding-left': '20px'}, id='song-explanation'),
         dcc.Dropdown(
             id='song_dropdown',
             options=checkOptions(clickData),

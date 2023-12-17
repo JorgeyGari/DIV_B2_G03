@@ -1,22 +1,4 @@
-# Referencias
-
-# Para el date selector he usado la primera, pero podríamos explorar la segunda
-# https://dash.plotly.com/dash-core-components/rangeslider
-# https://plotly.com/python/range-slider/
-
-# Para el mapa he usado la primera, y también se podría explorar la segunda. Y si nos apetece motivarnos, podemos considerar la tercera
-# https://plotly.com/python/scattermapbox/
-# https://plotly.com/python/scatter-plots-on-maps/
-# https://dash.plotly.com/dash-core-components/geolocation
-
-# Expansión de la Timeline: Añadir una graduación más fina
-
-# Expansión del Mapa: Crear markers personalizados, asociar a un color por artista
-
-# He tenido que borrar manualmente a Kanye West, a SZA y a Lana del Rey. Podemos considerar volver a añadirlos
-
-from dash import Dash
-from dash import html, dcc, Input, Output, callback
+from dash import html, dcc, Input, Output
 import pandas as pd
 import plotly.graph_objects as go
 

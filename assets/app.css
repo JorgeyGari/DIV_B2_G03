@@ -35,6 +35,11 @@ body {
     background-color: #A93F55;
     padding: 10px;
 }
+
+#main-explanation{
+    color: #B8938E;
+}
+
 /* ------------------------------ MAP ------------------------------ */
 
 #date-slider {
@@ -89,6 +94,11 @@ body {
     color: #FF9666;
     font-size: 25px;
 }
+
+#song-explanation{
+    color: #B8938E;
+}
+
 /* #selected-song{
     color: #A93F55
 } */
