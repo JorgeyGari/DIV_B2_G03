@@ -57,6 +57,7 @@ body {
     text-align: center;
     color: #A93F55;
     font-size: 80px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 #Search-icon{
