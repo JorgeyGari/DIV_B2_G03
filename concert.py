@@ -46,7 +46,7 @@ def update_concert_info(clickData) -> html.Div:
     If no selection is made, a default message is displayed.
     :param selection: The clickData from the map.
     """
-    # FIXME: The show is still not selected correctly (map returns the first one for each artist, not the correct one)
+    # Default message
     if clickData is None:
         return html.Div(
             [
@@ -54,6 +54,7 @@ def update_concert_info(clickData) -> html.Div:
             ]
         )
     else:
+        # The concert is selected by clicking on the map marker. The information coming from the clickData is used to then display the concert info
         click = clickData["points"][0]["text"]
         [artist, date] = click.split("*")
         concerts = df[artist]["Concerts"]

@@ -24,29 +24,37 @@ df = pd.read_json('data.json')
 
 mapbox_access_token = "pk.eyJ1IjoicGFibG9zYXZpbmEiLCJhIjoiY2xwbXVreXo4MGN5bTJscXk3YjJwY291ciJ9.Kyrlg9CR1Rdo7wAzD3IAVQ"
 
+# Function to transform a date from the format in the json file (yyyy/mm/dd) to a number
 def date2num(date):
     broken = date.split("-")
     numeric = int(broken[0]) * 10000 + int(broken[1]) * 100 + int(broken[2])
     return numeric
 
+# Function to transform a month into a number. Note how we only consider concerts in 2024
 def month2num(date):
     numeric = 2024 * 10000 + date * 100
     return numeric
 
+# Function to create the map depending on the data coming from the timeline
 def update_map_info(selection):
+    # Initial and final month, coming from the timeline
     initial = selection[0]
     final = selection[1]
 
+    # Lists used to then create markers in the map
     latitudes = []
     longitudes = []
     artists = []
 
+    # We access all of the available concerts, and check if their date is the interval selected in the timeline
+    # If it is, we store its latitude, longitude, and artist+date
     for artist in df.loc["Concerts"].index:
         for concert in df.loc["Concerts"][artist]:
             if date2num(concert["Date"]) > month2num(initial) and date2num(concert["Date"]) < month2num(final):
                 latitude = concert["Latitude"]
                 longitude = concert["Longitude"]
 
+                # If there are multiple concerts in the same location, we place them in slightly different locations
                 while latitude in latitudes: 
                     latitude = str(float(latitude) + 0.005)
                     longitude = str(float(longitude) + 0.005)
@@ -55,6 +63,7 @@ def update_map_info(selection):
                 longitudes.append(longitude)
                 artists.append(artist + "*" + concert["Date"])
     
+    # We create a map, feeding it the data gathered. We also specify the marker style
     map = go.Figure()
     map.add_trace(go.Scattermapbox(
             mode='markers',
@@ -64,6 +73,7 @@ def update_map_info(selection):
             text=artists,
             hoverinfo='text',
     ))
+    # We set some additional visualization properties for the map
     map.update_layout(
         autosize=True,
         hovermode='closest',
@@ -83,10 +93,11 @@ def update_map_info(selection):
 
     return map
 
+# Function to create the timeline
 def create_map_timeline() -> html.Div:
-    """Creates the map timeline."""
     return html.Div(
         [
+            # The range slider is created with the months of the year
             dcc.RangeSlider
             (
                 min=1,
@@ -124,14 +135,3 @@ def configure_callbacks_map(app) -> None:
         Output(component_id='map', component_property='figure'),
         Input(component_id='date-selector', component_property='value')
     )(update_map_info)
-
-if __name__ == '__main__':
-    app = Dash(__name__)
-    app.layout = html.Div(
-        [
-            create_map_timeline(),
-            html.Div([dcc.Graph(id='map')])
-        ]
-    )
-    configure_callbacks_map(app)
-    app.run_server(debug=True)
