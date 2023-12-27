@@ -8,6 +8,9 @@ Our project aims to create an application that helps the user find the best pric
 The project has two sections: data integration and data visualization.  
 This repository focuses on visualization and is based on the data integration found in [darosete/DIV_B1_G03](https://github.com/darosete/DIV_B1_G03/).
 
+## Disclaimer
+If you are a student who has been assigned this project as well, please **do not copy our work**. Only use it for guidance. We uploaded it to help future students, so we ask you to use it responsibly.
+
 ## Description
 
 > **Objective**: Design and develop a set of interactive visualizations about a domain of interest.  
